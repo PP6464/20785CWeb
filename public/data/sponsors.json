@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Shlok Corporation",
+        "website": "https://samsung.com/uk",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 0
+    },
+    {
+        "name": "ShlokHub",
+        "website": "https://samsung.com/uk",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 1
+    },
+    {
+        "name": "Shloxy Cosmetics",
+        "website": "https://samsung.com/uk",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 2
+    }
+]
