@@ -3,37 +3,30 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
 }
 
 #loading-container h1 {
-    font-size: 100px;
     font-weight: bold;
     animation: fade-out-in 2s infinite;
 }
 
 #loading-container img {
-    height: 100px;
+    height: 100%;
     animation: roll 2s infinite;
 }
 
 @keyframes roll {
     0% {
         rotate: 0deg;
-        translate: 0px 0px;
+        translate: 0 0;
     }
     50% {
         rotate: 180deg;
-        translate: 150px;
+        translate: 150% 0;
     }
     100% {
         rotate: 0deg;
-        translate: 0px 0px;
+        translate: 0 0;
     }
 }
 

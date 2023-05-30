@@ -1,13 +1,18 @@
-import './splash.css';
+import './loading.css';
 
-function Splash() {
+interface LoadingProps {
+  size: string
+  color: string
+}
+
+function Loading(props: LoadingProps) {
   return (
     <div id="loading-container">
-      <h1>2</h1>
-      <img src="/assets/logo.png" alt="GEAR" />
-      <h1>0785C</h1>
+      <h1 style={{fontSize: props.size, color: props.color}}>2</h1>
+      <img style={{height: props.size}} src={props.color === "black" ? "/assets/logo.png" : "/assets/logo-light.png"} alt="GEAR" />
+      <h1 style={{fontSize: props.size, color: props.color}}>785C</h1>
     </div>
   );
 }
 
-export default Splash;
+export default Loading;
