@@ -25,5 +25,7 @@ nav {
 #sponsors {
     display: flex;
     width: 100%;
-    scroll-behavior: auto;
+    scroll-behavior: revert;
+    color: white;
+    align-items: center;
 }
