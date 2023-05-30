@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function NoPage() {
     return (
-        <div>
+        <div id="no-page-container">
             <h1>404: Could not find url</h1>
             <p>Try one of: </p>
             <ul id="list-of-links">
