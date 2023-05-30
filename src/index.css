@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 body {
   margin: 0;
@@ -16,7 +16,7 @@ code {
 }
 
 * {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto Mono', monospace;
   box-sizing: border-box;
 }
 
