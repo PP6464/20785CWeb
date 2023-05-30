@@ -16,5 +16,17 @@
         "website": "https://samsung.com/uk",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         "id": 2
+    },
+    {
+        "name": "Shloke the bloke",
+        "website": "https://samsung.com/uk",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 3
+    },
+    {
+        "name": "Shloxy Films",
+        "website": "https://samsung.com/uk",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 4
     }
 ]
