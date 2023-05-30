@@ -20,6 +20,7 @@
 }
 
 .navbar-option:hover {
-    background: white;
+    background: grey;
     color: black;
+    cursor: pointer;
 }
