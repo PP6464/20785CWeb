@@ -7,9 +7,11 @@ nav {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
+    white-space: nowrap;
     margin: 0;
     padding: 0;
     height: 5vh;
+    overflow: hidden;
 }
 
 #navbar-ul * {
@@ -22,10 +24,62 @@ nav {
     background: black;
 }
 
-#sponsors {
+#navbar-tab-container {
     display: flex;
-    width: 100%;
-    scroll-behavior: revert;
+    flex-direction: column;
+}
+
+.sponsor {
+    display: flex;
     color: white;
     align-items: center;
+}
+
+#img-only-logo {
+    animation: rotate 2s infinite;
+    height: 10vh;
+}
+
+@keyframes rotate {
+    0%, 100% {
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 360deg;
+    }
+}
+
+#more-div, #small-navbar {
+    display: none;
+}
+
+#more-div:hover {
+    color: black;
+    background: grey;
+}
+
+@media only screen and (max-width: 950px) {
+    #more-div, #small-navbar {
+        display: flex;
+        flex-direction: column;
+    }
+    #more-div {
+        align-items: center;
+        -webkit-align-items: center;
+        background: black;
+        color: white;
+        font-weight: bold;
+    }
+    #navbar-ul {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    #more-div, #small-navbar {
+        display: none;
+    }
+    #navbar-ul {
+        display: flex;
+    }
 }
