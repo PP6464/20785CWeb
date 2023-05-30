@@ -1,0 +1,25 @@
+.navbar-option {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-underline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+}
+
+.navbar-option[data-selected="true"] {
+    background: red;
+    color: white;
+}
+
+.navbar-option[data-selected="false"] {
+    background: black;
+    color: white;
+}
+
+.navbar-option:hover {
+    background: white;
+    color: black;
+}
