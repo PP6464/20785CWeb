@@ -1,0 +1,60 @@
+{
+    "team": [
+        {
+            "name": "Email",
+            "image": "https://static.vecteezy.com/system/resources/previews/000/581/999/original/email-icon-vector-illustration.jpg",
+            "value": "team.email@20785c.tech",
+            "redirect": "mailto:team.email@20785c.tech",
+            "id": 0
+        }
+    ],
+    "individual": [
+        {
+            "name": "Panth Patel",
+            "email": "18bpatelp@qerdp.co.uk",
+            "discord": "PP16thePro#5565",
+            "id": 0
+        },
+        {
+            "name": "Harik Sodhi",
+            "email": "18lsodhih@qerdp.co.uk",
+            "discord": "Harik#8428",
+            "id": 1
+        },
+        {
+            "name": "Zuheb Islam",
+            "email": "18bislamz@qerdp.co.uk",
+            "discord": "ZuhebusMaximus#6927",
+            "id": 2
+        },
+        {
+            "name": "Divit Kovuri",
+            "email": "18pkovurid@qerdp.co.uk",
+            "discord": "dabangg#8122",
+            "id": 3
+        },
+        {
+            "name": "Aardish Praveen",
+            "email": "18spraveena@qerdp.co.uk",
+            "discord": "TheDishLasagne™#6847",
+            "id": 4
+        },
+        {
+            "name": "Neev Sanyal",
+            "email": "18ssanyaln@qerdp.co.uk",
+            "discord": "Derpyfella101#8831",
+            "id": 5
+        },
+        {
+            "name": "Aadi Poreddy",
+            "email": "18pporeddya@qerdp.co.uk",
+            "discord": "Yarei#1287",
+            "id": 6
+        },
+        {
+            "name": "Samarth Deshpande",
+            "email": "18sdeshpandes@qerdp.co.uk",
+            "discord": "cupcakeman#4690"
+        }
+    ]
+}
