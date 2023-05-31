@@ -2,7 +2,7 @@
     {
         "name": "Panth Patel",
         "role": "Programmer",
-        "desc": "Amazing guy",
+        "desc": "Made the team website, app and codes the robot",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         "id": 0
     },
@@ -35,9 +35,9 @@
         "id": 4
     },
     {
-        "name": "Derpyfella01",
-        "role": "IDK",
-        "desc": "Jokeman",
+        "name": "Neev",
+        "role": "Designer",
+        "desc": "A good designer",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         "id": 5
     },
@@ -49,9 +49,9 @@
         "id": 6
     },
     {
-        "name": "cupcakeman",
-        "role": "IDK",
-        "desc": "Its muffin time and i'm a muffin",
+        "name": "Samarth Deshpande",
+        "role": "Designer",
+        "desc": "Another normal designer",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         "id": 7
     }
