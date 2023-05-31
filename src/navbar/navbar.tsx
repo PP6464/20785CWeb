@@ -35,6 +35,7 @@ function Navbar() {
         const windowResizeListener = debounce(() => {
             setWidth(window.innerWidth)
         }, 1000)
+        setWidth(window.innerWidth)
         window.addEventListener("resize", windowResizeListener)
     }, []);
     useEffect(loadSponsors, []);
@@ -43,13 +44,13 @@ function Navbar() {
         <header id="navbar-root">
             <nav>
                 <div id="top-bar">
-                    <div style={{paddingLeft: "2vw", paddingRight: "2vw", display: "flex", alignItems: "center"}}>
+                    <a style={{paddingLeft: "2vw", paddingRight: "2vw", display: "flex", alignItems: "center", textDecoration: "none"}} href="/" target="_blank" rel="noreferrer">
                         {width > 650 ?
                             <div id="logo-large-container"><Loading size="5vh" color="white"/>
                                 <h1 style={{margin: "0px", padding: "0px", width: "fit-content"}}>Override</h1>
                             </div> :
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
-                    </div>
+                    </a>
                     {sponsors.length === 0 ? <div style={{color: "white", display: "flex", alignItems: "center", justifyContent: "center", width: "100%"}}>
                             <h1>No sponsors yet. Sponsor us and get your brand on our robot.</h1>
                         </div> :
