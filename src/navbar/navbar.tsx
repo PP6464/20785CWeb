@@ -51,7 +51,7 @@ function Navbar() {
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </div>
                     {sponsors.length === 0 ? <div style={{color: "white", display: "flex", alignItems: "center", justifyContent: "center", width: "100%"}}>
-                            <h1>No sponsors yet. Sponsor us and get your brand on our robot</h1>
+                            <h1>No sponsors yet. Sponsor us and get your brand on our robot.</h1>
                         </div> :
                         <div id="sponsor-place">
                             <h1 style={{fontSize: "1rem"}}>Proudly sponsored by: </h1>
