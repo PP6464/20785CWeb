@@ -1,0 +1,59 @@
+#meet-the-team-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.member-outer-div {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.member-outer-div[data-on-left="true"] {
+    justify-content: flex-start;
+}
+
+.member-outer-div[data-on-left="false"] {
+    justify-content: flex-end;
+}
+
+.member-inner-div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    elevation: higher;
+    box-shadow: 0 0 5px #CCCCCC;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+}
+
+.member-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 85vw;
+}
+
+.member-info * {
+    margin: 0;
+}
+
+.member-inner-div img {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.member-inner-div[data-on-left="true"] {
+    flex-direction: row;
+    padding-right: 20px;
+    text-align: left;
+}
+
+.member-inner-div[data-on-left="false"] {
+    flex-direction: row-reverse;
+    padding-left: 20px;
+    text-align: right;
+}
