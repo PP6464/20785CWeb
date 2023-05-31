@@ -1,3 +1,4 @@
+import {useNavigate} from 'react-router-dom';
 import './navbar-option.css'
 
 interface NavbarOptionProps {
@@ -8,13 +9,18 @@ interface NavbarOptionProps {
 }
 
 function NavbarOption(props: NavbarOptionProps) {
+    const navigate = useNavigate()
+
+    function navigateToPath() {
+        navigate(props.path);
+        props.onSelect()
+    }
+
     return (
-        <li className="navbar-option" data-selected={props.selected.toString()}>
-            <a href={props.path} rel="noreferrer" target="_self" style={{textDecoration: "none", width: "100%", display: "flex", justifyContent: "center", color: "white"}}>
-                <h1>{props.title}</h1>
-            </a>
+        <li className="navbar-option" onClick={navigateToPath} data-selected={props.selected.toString()}>
+            <h1>{props.title}</h1>
         </li>
-    );
+        );
 }
 
 export default NavbarOption
