@@ -40,7 +40,7 @@ function Navbar() {
     useEffect(loadSponsors, []);
 
     return (
-        <div>
+        <header id="navbar-root">
             <nav>
                 <div id="top-bar">
                     <div style={{paddingLeft: "2vw", paddingRight: "2vw", display: "flex", alignItems: "center"}}>
@@ -116,7 +116,7 @@ function Navbar() {
                 </div>
             </nav>
             <Outlet/>
-        </div>
+        </header>
     )
 }
 
