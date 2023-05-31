@@ -55,7 +55,7 @@ function Navbar() {
                             <h1>No sponsors yet. Sponsor us and get your brand on our robot.</h1>
                         </div> :
                         <div id="sponsor-place">
-                            <h1 style={{fontSize: "1rem"}}>Proudly sponsored by: </h1>
+                            <h1 style={{fontSize: "1rem"}}>Sponsored by: </h1>
                             <Marquee pauseOnHover={true}>
                                 {
                                     sponsors.map((sponsor: any) => (
