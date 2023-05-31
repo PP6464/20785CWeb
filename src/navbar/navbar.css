@@ -18,6 +18,15 @@ nav {
     padding: 1rem;
 }
 
+#sponsor-place {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
 #top-bar {
     display: flex;
     height: 15vh;
@@ -67,7 +76,7 @@ nav {
     justify-content: center;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1175px) {
     #more-div, #small-navbar {
         display: flex;
         flex-direction: column;
@@ -86,7 +95,7 @@ nav {
     }
 }
 
-@media only screen and (min-width: 950px) {
+@media only screen and (min-width: 1175px) {
     #more-div, #small-navbar {
         display: none;
     }
