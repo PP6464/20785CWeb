@@ -63,6 +63,7 @@ nav {
         display: flex;
         flex-direction: column;
     }
+
     #more-div {
         align-items: center;
         -webkit-align-items: center;
@@ -70,6 +71,7 @@ nav {
         color: white;
         font-weight: bold;
     }
+
     #navbar-ul {
         display: none;
     }
@@ -79,6 +81,7 @@ nav {
     #more-div, #small-navbar {
         display: none;
     }
+
     #navbar-ul {
         display: flex;
     }

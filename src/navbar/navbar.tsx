@@ -44,7 +44,8 @@ function Navbar() {
             <nav>
                 <div id="top-bar">
                     <div style={{paddingLeft: "2vw", paddingRight: "2vw", display: "flex", alignItems: "center"}}>
-                        {width > 650 ? <Loading size="5vh" color="white" /> : <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
+                        {width > 650 ? <Loading size="5vh" color="white"/> :
+                            <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </div>
                     <Marquee>
                         {
@@ -78,6 +79,8 @@ function Navbar() {
                     </div>
                     <ul id="navbar-ul">
                         <NavbarOption onSelect={() => setIndex(0)} path="/" selected={index === 0} title="Home"/>
+                        <NavbarOption onSelect={() => setIndex(0)} path="/competitions" selected={index === 0}
+                                      title="Competitions"/>
                         <NavbarOption onSelect={() => setIndex(1)} path="/meet-the-team" selected={index === 1}
                                       title="Meet the team"/>
                         <NavbarOption onSelect={() => setIndex(2)} path="/contact-us" selected={index === 2}
