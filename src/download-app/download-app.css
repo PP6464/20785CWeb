@@ -1,0 +1,33 @@
+#download-app-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app-feature h3::after {
+    content: '\002B9A';
+    padding-right: 10px;
+}
+
+.app-feature {
+    display: flex;
+    align-items: center;
+}
+
+#download-app-button {
+    color: white;
+    background: black;
+    border-radius: 40px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 25px;
+}
+
+#download-app-button:hover {
+    cursor: pointer;
+    background: grey;
+    color: black;
+}
