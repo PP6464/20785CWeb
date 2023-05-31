@@ -1,9 +1,40 @@
 import './download-app.css'
+import { useState, useEffect } from 'react'
 
 function DownloadApp() {
+    const [appData, setAppData] = useState({
+        "version": "1.0.0+1",
+        "features": [],
+        "link": "https://play.google.com/store/apps/details?id=com.chat.commenter",
+    })
+
+    function loadAppData() {
+        fetch("/data/20785C-app.json").then(app => {
+            app.json().catch(_ => {}).then((data: any) => {
+                setAppData(data)
+            })
+        })
+    }
+    useEffect(loadAppData, [])
+
     return (
-        <div>
-            <h1>20785C app</h1>
+        <div id="download-app-container">
+            <h1 style={{textDecoration: "underline", textAlign: "center"}}>Download the 20785C app:</h1>
+            <h1 style={{marginBottom: "0"}}>Version: {appData.version}</h1>
+            <h1 style={{marginBottom: "0"}}>Features:</h1>
+            <ul style={{listStyle: "none", marginBottom: "0"}}>
+                {
+                    appData.features.map((feature: any, index: number) => (
+                        <li className="app-feature">
+                            <h3></h3>
+                            <p key={index} style={{fontSize: "20px"}}>{feature}</p>
+                        </li>
+                    ))
+                }
+            </ul>
+            <div id="download-app-button" onClick={() => window.open(appData.link, "_blank", "noreferrer")}>
+                <h1>Download Now!</h1>
+            </div>
         </div>
     )
 }

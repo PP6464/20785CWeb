@@ -17,11 +17,11 @@ function MeetTheTeam() {
 
     return (
         <div id="meet-the-team-container">
-            <h1>Meet the team</h1>
+            <h1 style={{textDecoration: "underline"}}>Meet the Team:</h1>
             <div style={{width: "100%"}}>
                 {
-                    members.map((member: any) => (
-                        <div key={member.id} className="member-outer-div"
+                    members.map((member: any, index: number) => (
+                        <div key={index} className="member-outer-div"
                              data-on-left={(member.id % 2 === 0).toString()}>
                             <div className="member-inner-div" data-on-left={(member.id % 2 === 0).toString()}>
                                 <img alt={member.name} src={member.photo} style={{borderRadius: "30%", height: "100px"}}/>

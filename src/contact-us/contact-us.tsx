@@ -22,8 +22,8 @@ function ContactUs() {
             <h1 style={{textDecoration: "underline", fontWeight: "bold", marginBottom: "0"}}>Contact Us:</h1>
             <h3 style={{fontSize: "30px"}}>Team</h3>
             {
-                teamContacts.map((contact: any) => (
-                    <a className="team-contact-link" key={contact.id} href={contact.redirect} target="_blank"
+                teamContacts.map((contact: any, index: number) => (
+                    <a className="team-contact-link" key={index} href={contact.redirect} target="_blank"
                        rel="noreferrer">
                         <img src={contact.image} alt={contact.name}
                              style={{borderRadius: "30%", height: "50px", paddingRight: "10px"}}/>
@@ -34,8 +34,8 @@ function ContactUs() {
             <h3 style={{fontSize: "30px"}}>Individuals</h3>
             <div style={{display: "flex", width: "20vw", flexDirection: "column", justifyContent: "flex-start"}}>
                 {
-                    individualContacts.map((contact: any) => (
-                        <div key={contact.id} className="individual-contact-outer">
+                    individualContacts.map((contact: any, index: number) => (
+                        <div key={index} className="individual-contact-outer">
                             <h3>{contact.name}</h3>
                             <div className="individual-contact-details">
                                 <img

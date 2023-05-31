@@ -16,13 +16,13 @@ function SponsorUs() {
 
     return (
         <div id="sponsor-us-container">
-            <h1 style={{textDecoration: "underline"}}>Sponsor Us</h1>
+            <h1 style={{textDecoration: "underline"}}>Sponsor Us:</h1>
             {
                 sponsors.length === 0 ? <h3>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div>
                     <h1>Our sponsors so far:</h1>
                     {
-                        sponsors.map((sponsor: any) => (
-                            <a className="sponsor" key={sponsor.id} style={{
+                        sponsors.map((sponsor: any, index: number) => (
+                            <a className="sponsor" key={index} style={{
                                 display: "flex",
                                 alignItems: "center",
                                 color: "black",
