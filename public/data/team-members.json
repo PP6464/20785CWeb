@@ -3,48 +3,56 @@
         "name": "Panth Patel",
         "role": "Programmer",
         "desc": "Amazing guy",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 0
     },
     {
         "name": "Harik Sodhi",
         "role": "Programmer & Designer",
         "desc": "Does a bit of everything",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 1
     },
     {
         "name": "Zuheb Islam",
         "role": "Designer",
         "desc": "Cool man",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 2
     },
     {
         "name": "Divit Kovuri",
         "role": "Designer",
         "desc": "Designs logos etc.",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 3
     },
     {
         "name": "Aardish Praveen",
         "role": "Designer",
         "desc": "Just your normal designer",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 4
     },
     {
         "name": "Dabaang",
         "role": "IDK",
         "desc": "Jokeman",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 5
     },
     {
         "name": "Yarei",
         "role": "IDK",
         "desc": "Another jokeman",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 5
     },
     {
         "name": "cupcakeman",
         "role": "IDK",
         "desc": "Its muffin time and i'm a muffin",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 6
     }
 ]
