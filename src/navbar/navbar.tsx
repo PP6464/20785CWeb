@@ -56,7 +56,7 @@ function Navbar() {
                         </div> :
                         <div id="sponsor-place">
                             <h1 style={{fontSize: "1rem"}}>Sponsored by: </h1>
-                            <Marquee pauseOnHover={true}>
+                            <Marquee>
                                 {
                                     sponsors.map((sponsor: any) => (
                                         <a className="sponsor" key={sponsor.id} style={{
