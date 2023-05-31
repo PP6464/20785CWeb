@@ -58,6 +58,15 @@ nav {
     background: grey;
 }
 
+#logo-large-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    height: 15vh;
+    align-items: center;
+    justify-content: center;
+}
+
 @media only screen and (max-width: 950px) {
     #more-div, #small-navbar {
         display: flex;

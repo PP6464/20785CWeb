@@ -44,7 +44,10 @@ function Navbar() {
             <nav>
                 <div id="top-bar">
                     <div style={{paddingLeft: "2vw", paddingRight: "2vw", display: "flex", alignItems: "center"}}>
-                        {width > 650 ? <Loading size="5vh" color="white"/> :
+                        {width > 650 ?
+                            <div id="logo-large-container"><Loading size="5vh" color="white"/>
+                                <h1 style={{margin: "0px", padding: "0px", width: "fit-content"}}>Override</h1>
+                            </div> :
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </div>
                     <Marquee>
@@ -79,15 +82,15 @@ function Navbar() {
                     </div>
                     <ul id="navbar-ul">
                         <NavbarOption onSelect={() => setIndex(0)} path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption onSelect={() => setIndex(0)} path="/competitions" selected={index === 0}
+                        <NavbarOption onSelect={() => setIndex(1)} path="/competitions" selected={index === 1}
                                       title="Competitions"/>
-                        <NavbarOption onSelect={() => setIndex(1)} path="/meet-the-team" selected={index === 1}
+                        <NavbarOption onSelect={() => setIndex(2)} path="/meet-the-team" selected={index === 2}
                                       title="Meet the team"/>
-                        <NavbarOption onSelect={() => setIndex(2)} path="/contact-us" selected={index === 2}
+                        <NavbarOption onSelect={() => setIndex(3)} path="/contact-us" selected={index === 3}
                                       title="Contact us"/>
-                        <NavbarOption onSelect={() => setIndex(3)} path="/sponsor-us" selected={index === 3}
+                        <NavbarOption onSelect={() => setIndex(4)} path="/sponsor-us" selected={index === 4}
                                       title="Sponsor us"/>
-                        <NavbarOption onSelect={() => setIndex(4)} path="/download-app" selected={index === 4}
+                        <NavbarOption onSelect={() => setIndex(5)} path="/download-app" selected={index === 5}
                                       title="20785C app"/>
                     </ul>
                     <div id="small-navbar" style={{display: showDropDown ? "flex" : "none"}}>
