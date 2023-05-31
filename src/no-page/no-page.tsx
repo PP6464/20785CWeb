@@ -23,7 +23,7 @@ function NoPage() {
                     <Link to="/meet-the-team">Meet the team</Link>
                 </li>
                 <li>
-                    <Link to="/app">20785C App</Link>
+                    <Link to="/download-app">20785C App</Link>
                 </li>
             </ul>
         </div>
