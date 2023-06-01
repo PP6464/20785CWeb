@@ -39,17 +39,21 @@ function ContactUs() {
                         <div key={index} className="individual-contact-outer">
                             <h3>{contact.name}</h3>
                             <div className="individual-contact-details">
-                                <img
-                                    src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
-                                    alt="DISCORD" style={{height: "20px", paddingRight: "10px"}}/>
                                 <a href="https://discord.com" target="_blank"
-                                   rel="noreferrer">Discord: {contact.discord}</a>
+                                   rel="noreferrer">
+                                    <img
+                                        src="https://assets-global.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png"
+                                        alt="DISCORD" style={{height: "20px", paddingRight: "10px"}}/>
+                                    Discord: {contact.discord}
+                                </a>
                             </div>
                             <div className="individual-contact-details">
-                                <img
-                                    src="https://static.vecteezy.com/system/resources/previews/000/581/999/original/email-icon-vector-illustration.jpg"
-                                    alt="EMAIL" style={{height: "30px", paddingRight: "10px"}}/>
-                                <a href={`mailto:${contact.email}`}>Email: {contact.email}</a>
+                                <a href={`mailto:${contact.email}`}>
+                                    <img
+                                        src="https://static.vecteezy.com/system/resources/previews/000/581/999/original/email-icon-vector-illustration.jpg"
+                                        alt="EMAIL" style={{height: "30px", paddingRight: "10px"}}/>
+                                    Email: {contact.email}
+                                </a>
                             </div>
                         </div>
                     ))
