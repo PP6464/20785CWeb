@@ -6,9 +6,9 @@ import {useEffect, useState} from "react";
 import Marquee from "react-fast-marquee";
 
 function Navbar() {
-    const [index, setIndex] = useState(0)
-    const [sponsors, setSponsors] = useState([])
-    const [showDropDown, setShowDropDown] = useState(false)
+    const [index, setIndex] = useState(0) // Save to page state, so not lost when page rerendered
+    const [sponsors, setSponsors] = useState([]) // Save to page state, so not lost when page rerendered
+    const [showDropDown, setShowDropDown] = useState(false) // Save to page state, so not lost when page rerendered
 
     function loadSponsors() {
         fetch("/data/sponsors.json").then(sponsors => {
@@ -30,15 +30,15 @@ function Navbar() {
         };
     }
 
-    const [width, setWidth] = useState(0);
+    const [width, setWidth] = useState(0); // Save to page state, so not lost when page rerendered
     useEffect(() => {
         const windowResizeListener = debounce(() => {
             setWidth(window.innerWidth)
         }, 1000)
         setWidth(window.innerWidth)
-        window.addEventListener("resize", windowResizeListener)
-    }, []);
-    useEffect(loadSponsors, []);
+        window.addEventListener("resize", windowResizeListener) // register window resize listener to ensure correct logo size is used for display width
+    }, []); // run on page lauch once
+    useEffect(loadSponsors, []); // run on page lauch once
 
     return (
         <header id="navbar-root">
@@ -79,9 +79,9 @@ function Navbar() {
                 </div>
                 <div id="navbar-tab-container">
                     <div id="more-div" onClick={() => {
-                        setShowDropDown(!showDropDown)
+                        setShowDropDown(!showDropDown) // Show navigation opetions or hide if already displayed
                         let rotatingArrow = document.getElementById("rotating-arrow")!
-                        rotatingArrow.style.rotate = showDropDown ? "0deg" : "90deg"
+                        rotatingArrow.style.rotate = showDropDown ? "0deg" : "90deg" // rotate arrow accordingly
                     }}>
                         <div style={{display: "flex"}}>
                             <h1 style={{paddingRight: "10px"}}>More</h1>

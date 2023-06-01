@@ -2,7 +2,7 @@ import './sponsor-us.css'
 import { useState, useEffect } from 'react'
 
 function SponsorUs() {
-    const [sponsors, setSponsors] = useState([])
+    const [sponsors, setSponsors] = useState([]) // Save to page state to not lose information when page rerendered
 
     function loadSponsors() {
         fetch("/data/sponsors.json").then(sponsors => {
@@ -12,7 +12,7 @@ function SponsorUs() {
             })
         })
     }
-    useEffect(loadSponsors, [])
+    useEffect(loadSponsors, [])// run on page lauch once
 
     return (
         <div id="sponsor-us-container">

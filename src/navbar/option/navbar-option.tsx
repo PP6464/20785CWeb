@@ -2,10 +2,10 @@ import {useNavigate} from 'react-router-dom';
 import './navbar-option.css'
 
 interface NavbarOptionProps {
-    title: string
-    selected: boolean
-    path: string
-    onSelect: () => any
+    title: string // Title of this option
+    selected: boolean // Whether or not this is the current page
+    path: string // Where to navigate to
+    onSelect: () => any // Takes a function to change the selected index in navbar.tsx
 }
 
 function NavbarOption(props: NavbarOptionProps) {

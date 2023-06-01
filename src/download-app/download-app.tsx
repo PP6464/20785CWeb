@@ -3,19 +3,19 @@ import { useState, useEffect } from 'react'
 
 function DownloadApp() {
     const [appData, setAppData] = useState({
-        "version": "1.0.0+1",
-        "features": [],
-        "link": "https://play.google.com/store/apps/details?id=com.chat.commenter",
-    })
+        "version": "1.0.0+1", // Version number
+        "features": [], // List of features to display for app
+        "link": "https://play.google.com/store/apps/details?id=com.chat.commenter", // Mock link, will be replaced by actual link for 20785C app
+    }) // Save to page state to not lose when page rerendered
 
-    function loadAppData() {
+    function loadAppData() { // Load app data from /data/20785C-app.json url (corresponds to /public/data/20785C-app.json)
         fetch("/data/20785C-app.json").then(app => {
             app.json().catch(_ => {}).then((data: any) => {
                 setAppData(data)
             })
         })
     }
-    useEffect(loadAppData, [])
+    useEffect(loadAppData, []) // run on page launch once
 
     return (
         <div id="download-app-container">
@@ -26,7 +26,7 @@ function DownloadApp() {
                 {
                     appData.features.map((feature: any, index: number) => (
                         <li className="app-feature">
-                            <h3></h3>
+                            <h3> </h3>
                             <p key={index} style={{fontSize: "20px"}}>{feature}</p>
                         </li>
                     ))

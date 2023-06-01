@@ -1,8 +1,8 @@
 import './loading.css';
 
 interface LoadingProps {
-  size: string
-  color: string
+  size: string // size of animation
+  color: string // whether or not to use dark text and logo
 }
 
 function Loading(props: LoadingProps) {

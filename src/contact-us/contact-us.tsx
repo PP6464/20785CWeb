@@ -2,10 +2,10 @@ import './contact-us.css'
 import {useEffect, useState} from "react";
 
 function ContactUs() {
-    const [teamContacts, setTeamContacts] = useState([])
-    const [individualContacts, setIndividualContacts] = useState([])
+    const [teamContacts, setTeamContacts] = useState([]) // Save variable to page state, so not lost when page rerendered 
+    const [individualContacts, setIndividualContacts] = useState([]) // Save variable to page state, so not lost when page rerendered
 
-    function loadContactInfo() {
+    function loadContactInfo() { // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
         fetch("/data/contacts.json").then(contacts => {
             contacts.json().catch(_ => {
             }).then((data: any) => {
@@ -14,14 +14,14 @@ function ContactUs() {
             })
         })
     }
-
-    useEffect(loadContactInfo, [])
+    useEffect(loadContactInfo, []) // run on page launch once
 
     return (
         <div id="contact-us-container">
             <h1 style={{textDecoration: "underline", fontWeight: "bold", marginBottom: "0"}}>Contact Us:</h1>
             <h3 style={{fontSize: "30px"}}>Team</h3>
             {
+                // Renders team contact details with image, value, name and redirect (see /public/data/contact.json for example)
                 teamContacts.map((contact: any, index: number) => (
                     <a className="team-contact-link" key={index} href={contact.redirect} target="_blank"
                        rel="noreferrer">
@@ -34,6 +34,7 @@ function ContactUs() {
             <h3 style={{fontSize: "30px"}}>Individuals</h3>
             <div style={{display: "flex", width: "20vw", flexDirection: "column", justifyContent: "flex-start"}}>
                 {
+                    // Render Discord and email contact details for each member of team (with corresponding redirects)
                     individualContacts.map((contact: any, index: number) => (
                         <div key={index} className="individual-contact-outer">
                             <h3>{contact.name}</h3>

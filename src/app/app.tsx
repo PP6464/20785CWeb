@@ -10,6 +10,7 @@ import SponsorUs from "../sponsor-us/sponsor-us";
 import Competitions from "../competitions/competitions";
 
 function App() {
+    // Set up navigation by mapping each element to a path
     return (
         <BrowserRouter>
             <Routes>
