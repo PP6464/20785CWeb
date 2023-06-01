@@ -1,4 +1,4 @@
-import {Outlet} from "react-router-dom";
+import {Outlet, useLocation} from "react-router-dom";
 import './navbar.css';
 import NavbarOption from "./option/navbar-option";
 import Loading from "../loading/loading";
@@ -6,9 +6,10 @@ import {useEffect, useState} from "react";
 import Marquee from "react-fast-marquee";
 
 function Navbar() {
-    const [index, setIndex] = useState(0) // Save to page state, so not lost when page rerendered
+    const [index, setIndex] = useState<number | null>(0) // Save to page state, so not lost when page rerendered
     const [sponsors, setSponsors] = useState([]) // Save to page state, so not lost when page rerendered
     const [showDropDown, setShowDropDown] = useState(false) // Save to page state, so not lost when page rerendered
+    const location = useLocation()
 
     function loadSponsors() {
         fetch("/data/sponsors.json").then(sponsors => {
@@ -30,6 +31,25 @@ function Navbar() {
         };
     }
 
+    function indexForRoute(route: string): number | null {
+        switch (route) {
+            case "/":
+                return 0
+            case "/competitions":
+                return 1
+            case "/meet-the-team":
+                return 2
+            case "/contact-us":
+                return 3
+            case "/sponsor-us":
+                return 4
+            case "/download-app":
+                return 5
+            default:
+                return null
+        }
+    }
+
     const [width, setWidth] = useState(0); // Save to page state, so not lost when page rerendered
     useEffect(() => {
         const windowResizeListener = debounce(() => {
@@ -37,21 +57,36 @@ function Navbar() {
         }, 1000)
         setWidth(window.innerWidth)
         window.addEventListener("resize", windowResizeListener) // register window resize listener to ensure correct logo size is used for display width
-    }, []); // run on page lauch once
-    useEffect(loadSponsors, []); // run on page lauch once
+    }, []) // run on page lauch once
+    useEffect(loadSponsors, []) // run on page lauch once
+    useEffect(() => {
+        setIndex(indexForRoute(location.pathname))
+    }, [location])
 
     return (
         <header id="navbar-root">
             <nav>
                 <div id="top-bar">
-                    <a style={{paddingLeft: "2vw", paddingRight: "2vw", display: "flex", alignItems: "center", textDecoration: "none"}} href="/" target="_blank" rel="noreferrer">
+                    <a style={{
+                        paddingLeft: "2vw",
+                        paddingRight: "2vw",
+                        display: "flex",
+                        alignItems: "center",
+                        textDecoration: "none"
+                    }} href="/" target="_blank" rel="noreferrer">
                         {width > 650 ?
                             <div id="logo-large-container"><Loading size="5vh" color="white"/>
                                 <h1 style={{margin: "0px", padding: "0px", width: "fit-content"}}>Override</h1>
                             </div> :
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </a>
-                    {sponsors.length === 0 ? <div style={{color: "white", display: "flex", alignItems: "center", justifyContent: "center", width: "100%"}}>
+                    {sponsors.length === 0 ? <div style={{
+                            color: "white",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: "100%"
+                        }}>
                             <h1>No sponsors yet. Sponsor us and get your brand on our robot!</h1>
                         </div> :
                         <div id="sponsor-place">
@@ -89,30 +124,20 @@ function Navbar() {
                         </div>
                     </div>
                     <ul id="navbar-ul">
-                        <NavbarOption onSelect={() => setIndex(0)} path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption onSelect={() => setIndex(1)} path="/competitions" selected={index === 1}
-                                      title="Competitions"/>
-                        <NavbarOption onSelect={() => setIndex(2)} path="/meet-the-team" selected={index === 2}
-                                      title="Meet the team"/>
-                        <NavbarOption onSelect={() => setIndex(3)} path="/contact-us" selected={index === 3}
-                                      title="Contact us"/>
-                        <NavbarOption onSelect={() => setIndex(4)} path="/sponsor-us" selected={index === 4}
-                                      title="Sponsor us"/>
-                        <NavbarOption onSelect={() => setIndex(5)} path="/download-app" selected={index === 5}
-                                      title="20785C app"/>
+                        <NavbarOption path="/" selected={index === 0} title="Home"/>
+                        <NavbarOption path="/competitions" selected={index === 1} title="Competitions"/>
+                        <NavbarOption path="/meet-the-team" selected={index === 2} title="Meet the team"/>
+                        <NavbarOption path="/contact-us" selected={index === 3} title="Contact us"/>
+                        <NavbarOption path="/sponsor-us" selected={index === 4} title="Sponsor us"/>
+                        <NavbarOption path="/download-app" selected={index === 5} title="20785C app"/>
                     </ul>
                     <div id="small-navbar" style={{display: showDropDown ? "flex" : "none"}}>
-                        <NavbarOption onSelect={() => setIndex(0)} path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption onSelect={() => setIndex(1)} path="/competitions" selected={index === 1}
-                                      title="Competitions"/>
-                        <NavbarOption onSelect={() => setIndex(2)} path="/meet-the-team" selected={index === 2}
-                                      title="Meet the team"/>
-                        <NavbarOption onSelect={() => setIndex(3)} path="/contact-us" selected={index === 3}
-                                      title="Contact us"/>
-                        <NavbarOption onSelect={() => setIndex(4)} path="/sponsor-us" selected={index === 4}
-                                      title="Sponsor us"/>
-                        <NavbarOption onSelect={() => setIndex(5)} path="/download-app" selected={index === 5}
-                                      title="20785C app"/>
+                        <NavbarOption path="/" selected={index === 0} title="Home"/>
+                        <NavbarOption path="/competitions" selected={index === 1} title="Competitions"/>
+                        <NavbarOption path="/meet-the-team" selected={index === 2} title="Meet the team"/>
+                        <NavbarOption path="/contact-us" selected={index === 3} title="Contact us"/>
+                        <NavbarOption path="/sponsor-us" selected={index === 4} title="Sponsor us"/>
+                        <NavbarOption path="/download-app" selected={index === 5} title="20785C app"/>
                     </div>
                 </div>
             </nav>
