@@ -1,4 +1,4 @@
-#contact-us-container {
+	#contact-us-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,6 +16,9 @@
 .individual-contact-outer {
     display: flex;
     flex-direction: column;
+    width: 400px;
+    max-width: 50vw;
+    align-self: center;
 }
 
 .individual-contact-details a {
@@ -28,4 +31,6 @@
 .individual-contact-details {
     display: flex;
     align-items: center;
+    width: 400px;
+    max-width: 50vw;
 }
