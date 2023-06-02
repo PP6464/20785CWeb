@@ -13,12 +13,16 @@
 
 .sponsor-us-input[data-smaller] {
     width: 300px;
-    max-lines: 1;
+}
+
+.sponsor-us-input[data-medium] {
+    width: 450px;
 }
 
 .sponsor-us-input[data-larger] {
     width: 600px;
     height: 300px;
+    margin-bottom: 0px;
     resize: none;
 }
 
@@ -26,11 +30,8 @@
     color: white;
     background: black;
     border-radius: 40px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 40px;
-    padding-right: 40px;
-    margin-top: 25px;
+    padding: 0 40px;
+    margin-top: 15px;
     margin-bottom: 40px;
 }
 
