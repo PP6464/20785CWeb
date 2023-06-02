@@ -9,8 +9,7 @@ function Navbar() {
     const [index, setIndex] = useState<number | null>(0) // Save to page state, so not lost when page rerendered
     const [sponsors, setSponsors] = useState([]) // Save to page state, so not lost when page rerendered
     const [showDropDown, setShowDropDown] = useState(false) // Save to page state, so not lost when page rerendered
-    const location = useLocation()
-
+    const location = useLocation() // Use current page location
     function loadSponsors() {
         fetch("/data/sponsors.json").then(sponsors => {
             sponsors.json().catch(_ => {
@@ -65,7 +64,7 @@ function Navbar() {
 
     return (
         <header id="navbar-root">
-            <nav>
+            <nav style={{background: "black"}}>
                 <div id="top-bar">
                     <a style={{
                         paddingLeft: "2vw",
@@ -91,22 +90,37 @@ function Navbar() {
                         </div> :
                         <div id="sponsor-place">
                             <h1 style={{fontSize: "1rem"}}>Sponsored by: </h1>
-                            <Marquee>
-                                {
-                                    sponsors.map((sponsor: any) => (
-                                        <a className="sponsor" key={sponsor.id} style={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                            color: "white",
-                                            textDecoration: "none"
-                                        }} href={sponsor.website} target="_blank" rel="noreferrer">
-                                            <img src={sponsor.photo} style={{height: "5vh", borderRadius: "50%"}}
-                                                 alt=""/>
-                                            <h1 style={{paddingLeft: "1rem", paddingRight: "1rem"}}>{sponsor.name}</h1>
-                                        </a>
-                                    ))
-                                }
-                            </Marquee>
+                            {
+                              document.getElementById("sponsor-place")!.offsetWidth < (document.documentElement.clientHeight * 0.09 + 10) * sponsors.length ? <Marquee>
+                                    {
+                                        sponsors.map((sponsor: any) => (
+                                            <a className="sponsor" key={sponsor.id} style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                color: "white",
+                                                textDecoration: "none"
+                                            }} href={sponsor.website} target="_blank" rel="noreferrer">
+                                                <img src={sponsor.photo} style={{height: "9vh", borderRadius: "50%"}}
+                                                    alt={sponsor.name} />
+                                            </a>
+                                        ))
+                                    }
+                                </Marquee> : <div style={{display: "flex"}}>
+                                    {
+                                        sponsors.map((sponsor: any) => (
+                                            <a className="sponsor" key={sponsor.id} style={{
+                                                display: "flex",
+                                                alignItems: "center",
+                                                color: "white",
+                                                textDecoration: "none"
+                                            }} href={sponsor.website} target="_blank" rel="noreferrer">
+                                                <img src={sponsor.photo} style={{height: "9vh", borderRadius: "50%"}}
+                                                    alt={sponsor.name} />
+                                            </a>
+                                            ))
+                                    }
+                        </div>
+                            }
                         </div>}
                     <a href="https://www.qebarnet.co.uk" target="_blank" rel="noreferrer">
                         <img src="/assets/qe-logo.png" alt="QE Barnet" style={{padding: "1rem", height: "15vh"}}/>
@@ -125,19 +139,21 @@ function Navbar() {
                     </div>
                     <ul id="navbar-ul">
                         <NavbarOption path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption path="/competitions" selected={index === 1} title="Competitions"/>
-                        <NavbarOption path="/meet-the-team" selected={index === 2} title="Meet the team"/>
-                        <NavbarOption path="/contact-us" selected={index === 3} title="Contact us"/>
-                        <NavbarOption path="/sponsor-us" selected={index === 4} title="Sponsor us"/>
-                        <NavbarOption path="/download-app" selected={index === 5} title="20785C app"/>
+                        <NavbarOption path="/about-us" selected={index === 1} title="About us" />
+                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions"/>
+                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team"/>
+                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us"/>
+                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us"/>
+                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app"/>
                     </ul>
                     <div id="small-navbar" style={{display: showDropDown ? "flex" : "none"}}>
                         <NavbarOption path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption path="/competitions" selected={index === 1} title="Competitions"/>
-                        <NavbarOption path="/meet-the-team" selected={index === 2} title="Meet the team"/>
-                        <NavbarOption path="/contact-us" selected={index === 3} title="Contact us"/>
-                        <NavbarOption path="/sponsor-us" selected={index === 4} title="Sponsor us"/>
-                        <NavbarOption path="/download-app" selected={index === 5} title="20785C app"/>
+                        <NavbarOption path="/about-us" selected={index === 1} title="About us" />
+                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions"/>
+                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team"/>
+                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us"/>
+                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us"/>
+                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app"/>
                     </div>
                 </div>
             </nav>

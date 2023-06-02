@@ -25,6 +25,7 @@ nav {
     align-items: center;
     justify-content: center;
     color: white;
+    flex-grow: 1;
 }
 
 #top-bar {
@@ -36,12 +37,14 @@ nav {
 #navbar-tab-container {
     display: flex;
     flex-direction: column;
+    padding-top: 15px;
 }
 
 .sponsor {
     display: flex;
     color: white;
     align-items: center;
+    padding: 0 10px;
 }
 
 #img-only-logo {
@@ -76,7 +79,7 @@ nav {
     justify-content: center;
 }
 
-@media only screen and (max-width: 1175px) {
+@media only screen and (max-width: 1360px) {
     #more-div, #small-navbar {
         display: flex;
         flex-direction: column;
@@ -95,7 +98,7 @@ nav {
     }
 }
 
-@media only screen and (min-width: 1175px) {
+@media only screen and (min-width: 1360px) {
     #more-div, #small-navbar {
         display: none;
     }
