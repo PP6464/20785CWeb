@@ -30,6 +30,14 @@ function Navbar() {
         };
     }
 
+    function decideMarqueeShouldPlay() {
+        try {
+            return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.09 + 10) * sponsors.length
+        } catch {
+            return true
+        }
+    }
+
     function indexForRoute(route: string): number | null {
         switch (route) {
             case "/":
@@ -91,7 +99,7 @@ function Navbar() {
                         <div id="sponsor-place">
                             <h1 style={{fontSize: "1rem"}}>Sponsored by: </h1>
                             {
-                              document.getElementById("sponsor-place")!.offsetWidth < (document.documentElement.clientHeight * 0.09 + 10) * sponsors.length ? <Marquee>
+                               decideMarqueeShouldPlay() ? <Marquee>
                                     {
                                         sponsors.map((sponsor: any) => (
                                             <a className="sponsor" key={sponsor.id} style={{
