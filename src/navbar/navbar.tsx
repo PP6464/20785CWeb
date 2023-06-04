@@ -36,7 +36,7 @@ function Navbar() {
 
     function decideMarqueeShouldPlay() {
         try {
-            return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.09 + 10) * sponsors.length
+            return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.05 + 10) * sponsors.length
         } catch {
             return true
         }
@@ -104,8 +104,8 @@ function Navbar() {
                         }}>
                             <h1>No sponsors yet. Sponsor us and get your brand on our robot!</h1>
                         </div> :
-                        <div id="sponsor-place">
-                            <h1 style={{fontSize: "1rem"}}>Sponsored by: </h1>
+                        <div id="sponsor-place" style={{fontSize: "9px"}}>
+                            <h1>Sponsored by: </h1>
                             {
                                 decideMarqueeShouldPlay() ? <Marquee>
                                     {
@@ -116,7 +116,7 @@ function Navbar() {
                                                 color: "white",
                                                 textDecoration: "none"
                                             }} href={sponsor.website} target="_blank" rel="noreferrer">
-                                                <img src={sponsor.photo} style={{height: "9vh", borderRadius: "50%"}}
+                                                <img src={sponsor.photo} style={{height: "5vh", borderRadius: "50%"}}
                                                      alt={sponsor.name}/>
                                             </a>
                                         ))
@@ -130,7 +130,7 @@ function Navbar() {
                                                 color: "white",
                                                 textDecoration: "none"
                                             }} href={sponsor.website} target="_blank" rel="noreferrer">
-                                                <img src={sponsor.photo} style={{height: "9vh", borderRadius: "50%"}}
+                                                <img src={sponsor.photo} style={{height: "5vh", borderRadius: "50%"}}
                                                      alt={sponsor.name}/>
                                             </a>
                                         ))
