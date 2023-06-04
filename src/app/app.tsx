@@ -9,6 +9,7 @@ import ContactUs from "../contact-us/contact-us";
 import SponsorUs from "../sponsor-us/sponsor-us";
 import Competitions from "../competitions/competitions";
 import AboutUs from "../about-us/about-us";
+import Awards from "../awards/awards";
 
 function App() {
     // Set up navigation by mapping each element to a path
@@ -18,6 +19,7 @@ function App() {
                 <Route path="/" element={<Navbar />}>
                     <Route index element={<Home />} />
                     <Route path="about-us" element={<AboutUs />} />
+                    <Route path="awards" element={<Awards />} />
                     <Route path="meet-the-team" element={<MeetTheTeam />} />
                     <Route path="sponsor-us" element={<SponsorUs />} />
                     <Route path="contact-us" element={<ContactUs />} />
