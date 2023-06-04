@@ -23,11 +23,11 @@ function SponsorUs() {
             <h1 style={{textDecoration: "underline"}}>Sponsor Us:</h1>
             {
                 sponsors.length === 0 ?
-                    <h3>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div>
-                        <h1>Our sponsors so far:</h1>
+                    <h3>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                        <h1 style={{textAlign: "center"}}>Our sponsors so far:</h1>
                         {
                             sponsors.map((sponsor: any, index: number) => (
-                                <a className="sponsor" key={index} style={{
+                                <a className="sponsor-us-sponsor" key={index} style={{
                                     display: "flex",
                                     alignItems: "center",
                                     color: "black",
@@ -41,8 +41,8 @@ function SponsorUs() {
                         }
                     </div>
             }
-            <h1>To sponsor us:</h1>
-            <p>Contact us at vexoverride@gmail.com</p>
+            <h1 style={{textAlign: "center"}}>To sponsor us:</h1>
+            <p style={{textAlign: "center"}}>Contact us at vexoverride@gmail.com</p>
             <form style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <input type="text" className="sponsor-us-input" value={companyName}
                     onChange={(e) => setCompanyName(e.target.value)}
