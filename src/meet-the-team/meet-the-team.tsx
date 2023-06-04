@@ -21,8 +21,8 @@ function MeetTheTeam() {
                 {
                     members.map((member: any, index: number) => (
                         <div key={index} className="member-outer-div"
-                             data-on-left={(member.id % 2 === 0).toString()}>
-                            <div className="member-inner-div" data-on-left={(member.id % 2 === 0).toString()}>
+                             data-on-left={(index % 2 === 0).toString()}>
+                            <div className="member-inner-div" data-on-left={(index % 2 === 0).toString()}>
                                 <img alt={member.name} src={member.photo} style={{borderRadius: "30%", height: "100px"}}/>
                                 <div className="member-info">
                                     <h1>{member.name}</h1>
