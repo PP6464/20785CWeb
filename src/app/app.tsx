@@ -9,7 +9,7 @@ import ContactUs from "../contact-us/contact-us";
 import SponsorUs from "../sponsor-us/sponsor-us";
 import Competitions from "../competitions/competitions";
 import AboutUs from "../about-us/about-us";
-import Awards from "../awards/awards";
+import Awards from "../awards/award";
 
 function App() {
     // Set up navigation by mapping each element to a path
