@@ -3,48 +3,56 @@
         "name": "Panth Patel",
         "role": "Programmer",
         "desc": "Made the team website, app and codes the robot",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 0
     },
     {
         "name": "Harik Sodhi",
         "role": "Programmer & Designer",
         "desc": "Does a bit of everything",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 1
     },
     {
         "name": "Zuheb Islam",
         "role": "Designer",
         "desc": "Cool man",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 2
     },
     {
         "name": "Divit Kothari",
-        "role": "Designer",
-        "desc": "Designs logos etc.",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "role": "Designer & Programmer",
+        "desc": "Designs logos etc. as well as helping with code",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 3
     },
     {
         "name": "Aadish Praveen",
         "role": "Designer",
         "desc": "Just your normal designer",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 4
     },
     {
-        "name": "Neev Sanyal",
+        "name": "Neev",
         "role": "Designer",
         "desc": "A good designer",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 5
     },
     {
         "name": "Aadi Poreddy",
         "role": "Designer",
         "desc": "Another casual designer",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 6
     },
     {
         "name": "Samarth Deshpande",
         "role": "Designer",
         "desc": "Another normal designer",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+        "id": 7
     }
 ]
