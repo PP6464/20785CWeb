@@ -30,6 +30,10 @@ function Navbar() {
         };
     }
 
+    function hideSmallDiv() {
+        setShowDropDown(false)
+    }
+
     function decideMarqueeShouldPlay() {
         try {
             return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.09 + 10) * sponsors.length
@@ -42,16 +46,20 @@ function Navbar() {
         switch (route) {
             case "/":
                 return 0
-            case "/competitions":
+            case "/about-us":
                 return 1
-            case "/meet-the-team":
+            case "/awards":
                 return 2
-            case "/contact-us":
+            case "/competitions":
                 return 3
-            case "/sponsor-us":
+            case "/meet-the-team":
                 return 4
-            case "/download-app":
+            case "/contact-us":
                 return 5
+            case "/sponsor-us":
+                return 6
+            case "/download-app":
+                return 7
             default:
                 return null
         }
@@ -99,35 +107,35 @@ function Navbar() {
                         <div id="sponsor-place">
                             <h1 style={{fontSize: "1rem"}}>Sponsored by: </h1>
                             {
-                               decideMarqueeShouldPlay() ? <Marquee>
+                                decideMarqueeShouldPlay() ? <Marquee>
                                     {
-                                        sponsors.map((sponsor: any) => (
-                                            <a className="sponsor" key={sponsor.id} style={{
+                                        sponsors.map((sponsor: any, index: number) => (
+                                            <a className="sponsor" key={index} style={{
                                                 display: "flex",
                                                 alignItems: "center",
                                                 color: "white",
                                                 textDecoration: "none"
                                             }} href={sponsor.website} target="_blank" rel="noreferrer">
                                                 <img src={sponsor.photo} style={{height: "9vh", borderRadius: "50%"}}
-                                                    alt={sponsor.name} />
+                                                     alt={sponsor.name}/>
                                             </a>
                                         ))
                                     }
                                 </Marquee> : <div style={{display: "flex"}}>
                                     {
-                                        sponsors.map((sponsor: any) => (
-                                            <a className="sponsor" key={sponsor.id} style={{
+                                        sponsors.map((sponsor: any, index: number) => (
+                                            <a className="sponsor" key={index} style={{
                                                 display: "flex",
                                                 alignItems: "center",
                                                 color: "white",
                                                 textDecoration: "none"
                                             }} href={sponsor.website} target="_blank" rel="noreferrer">
                                                 <img src={sponsor.photo} style={{height: "9vh", borderRadius: "50%"}}
-                                                    alt={sponsor.name} />
+                                                     alt={sponsor.name}/>
                                             </a>
-                                            ))
+                                        ))
                                     }
-                        </div>
+                                </div>
                             }
                         </div>}
                     <a href="https://www.qebarnet.co.uk" target="_blank" rel="noreferrer">
@@ -146,22 +154,24 @@ function Navbar() {
                         </div>
                     </div>
                     <ul id="navbar-ul">
-                        <NavbarOption path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption path="/about-us" selected={index === 1} title="About us" />
-                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions"/>
-                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team"/>
-                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us"/>
-                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us"/>
-                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app"/>
+                        <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/about-us" selected={index === 1} title="About us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/awards" selected={index === 2} title="Awards" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/competitions" selected={index === 3} title="Competitions" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/meet-the-team" selected={index === 4} title="Meet the team" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/contact-us" selected={index === 5} title="Contact us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/sponsor-us" selected={index === 6} title="Sponsor us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/download-app" selected={index === 7} title="20785C app" onClick={hideSmallDiv}/>
                     </ul>
                     <div id="small-navbar" style={{display: showDropDown ? "flex" : "none"}}>
-                        <NavbarOption path="/" selected={index === 0} title="Home"/>
-                        <NavbarOption path="/about-us" selected={index === 1} title="About us" />
-                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions"/>
-                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team"/>
-                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us"/>
-                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us"/>
-                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app"/>
+                        <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/about-us" selected={index === 1} title="About us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/awards" selected={index === 2} title="Awards" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/competitions" selected={index === 3} title="Competitions" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/meet-the-team" selected={index === 4} title="Meet the team" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/contact-us" selected={index === 5} title="Contact us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/sponsor-us" selected={index === 6} title="Sponsor us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/download-app" selected={index === 7} title="20785C app" onClick={hideSmallDiv}/>
                     </div>
                 </div>
             </nav>
