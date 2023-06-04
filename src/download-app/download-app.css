@@ -19,10 +19,7 @@
     color: white;
     background: black;
     border-radius: 40px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding: 0 40px;
     margin-top: 25px;
 }
 
@@ -30,4 +27,16 @@
     cursor: pointer;
     background: grey;
     color: black;
+}
+
+@media only screen and (max-width: 560px) {
+    #download-app-button {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    #download-app-button {
+        font-size: 15px;
+    }
 }

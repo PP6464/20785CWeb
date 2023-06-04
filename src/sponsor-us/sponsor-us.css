@@ -13,16 +13,19 @@
 
 .sponsor-us-input[data-smaller] {
     width: 300px;
+    max-width: 90vw;
 }
 
 .sponsor-us-input[data-medium] {
     width: 450px;
+    max-width: 90vw;
 }
 
 .sponsor-us-input[data-larger] {
     width: 600px;
     height: 300px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
+    max-width: 90vw;
     resize: none;
 }
 
@@ -33,8 +36,27 @@
     padding: 0 40px;
     margin-top: 15px;
     margin-bottom: 40px;
+    max-width: 90vw;
+    text-align: center;
+}
+
+@media only screen and (max-width: 560px) {
+    #register-sponsorship {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    #register-sponsorship {
+        font-size: 15px;
+    }
 }
 
 #register-sponsorship:hover {
     cursor: pointer;
+}
+
+.sponsor-us-sponsor {
+    max-width: 90vw;
+    width: 400px;
 }
