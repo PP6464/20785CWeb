@@ -1,0 +1,27 @@
+#awards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.award-outer {
+    elevation: higher;
+    box-shadow: 0 0 5px #CCCCCC;
+    border-radius: 30px;
+    width: 100%;
+    margin: 5px 10px 5px 20px;
+    padding: 0 10px;
+}
+
+@media only screen and (max-width: 560px) {
+    .award-outer h1 {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    .award-outer h1 {
+        font-size: 20px;
+    }
+}
