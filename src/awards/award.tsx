@@ -33,8 +33,8 @@ function Awards() {
     return (
         <div id="awards-container">
             <h1>Awards</h1>
-            <label htmlFor="season-select" style={{fontSize: "25px"}}>Season: </label>
-            <select id="season-select" onChange={(e) => setSeason(e.target.value)} style={{fontSize: "25px", marginBottom: "10px"}}>
+            <label htmlFor="awards-season-select" style={{fontSize: "25px"}}>Season: </label>
+            <select id="awards-season-select" onChange={(e) => setSeason(e.target.value)} style={{fontSize: "25px", marginBottom: "10px"}}>
                 <option value="181">2023-24</option>
                 <option value="173">2022-23</option>
                 <option value="154">2021-22</option>
