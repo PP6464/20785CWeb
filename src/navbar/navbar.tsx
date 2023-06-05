@@ -46,20 +46,18 @@ function Navbar() {
         switch (route) {
             case "/":
                 return 0
-            case "/about-us":
-                return 1
             case "/awards":
-                return 2
+                return 1
             case "/competitions":
-                return 3
+                return 2
             case "/meet-the-team":
-                return 4
+                return 3
             case "/contact-us":
-                return 5
+                return 4
             case "/sponsor-us":
-                return 6
+                return 5
             case "/download-app":
-                return 7
+                return 6
             default:
                 return null
         }
@@ -155,23 +153,21 @@ function Navbar() {
                     </div>
                     <ul id="navbar-ul">
                         <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/about-us" selected={index === 1} title="About us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/awards" selected={index === 2} title="Awards" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/competitions" selected={index === 3} title="Competitions" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/meet-the-team" selected={index === 4} title="Meet the team" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/contact-us" selected={index === 5} title="Contact us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/sponsor-us" selected={index === 6} title="Sponsor us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/download-app" selected={index === 7} title="20785C app" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/awards" selected={index === 1} title="Awards" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv}/>
                     </ul>
                     <div id="small-navbar" style={{display: showDropDown ? "flex" : "none"}}>
                         <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/about-us" selected={index === 1} title="About us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/awards" selected={index === 2} title="Awards" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/competitions" selected={index === 3} title="Competitions" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/meet-the-team" selected={index === 4} title="Meet the team" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/contact-us" selected={index === 5} title="Contact us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/sponsor-us" selected={index === 6} title="Sponsor us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/download-app" selected={index === 7} title="20785C app" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/awards" selected={index === 1} title="Awards" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv}/>
                     </div>
                 </div>
             </nav>
