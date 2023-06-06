@@ -14,7 +14,7 @@ function Awards() {
 
     function loadAwards() {
         setLoading(true) // Display loading animation
-        const token = process.env.REACT_APP_robotEventsAPIToken
+        const token = process.env.REACT_APP_ROBOT_EVENTS_API_TOKEN
         fetch(`https://www.robotevents.com/api/v2/teams/93408/awards?season%5B%5D=${season}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
