@@ -1,6 +1,6 @@
 import './home.css'
-import ReactPlayer from "react-player";
-import {useEffect, useState} from 'react';
+import ReactPlayer from "react-player"
+import {useEffect, useState} from 'react'
 
 function Home() {
     const [videoURLs, setVideoURLs] = useState([])

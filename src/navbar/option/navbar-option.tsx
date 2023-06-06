@@ -1,4 +1,4 @@
-import {useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom'
 import './navbar-option.css'
 
 interface NavbarOptionProps {
@@ -20,7 +20,7 @@ function NavbarOption(props: NavbarOptionProps) {
         <li className="navbar-option" onClick={navigateToPath} data-selected={props.selected.toString()}>
             <h1>{props.title}</h1>
         </li>
-    );
+    )
 }
 
 export default NavbarOption

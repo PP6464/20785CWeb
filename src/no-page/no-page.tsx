@@ -1,5 +1,5 @@
 import './no-page.css'
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"
 
 function NoPage() {
     return (

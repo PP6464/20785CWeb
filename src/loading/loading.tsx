@@ -1,4 +1,4 @@
-import './loading.css';
+import './loading.css'
 
 interface LoadingProps {
   size: string // size of animation
@@ -12,7 +12,7 @@ function Loading(props: LoadingProps) {
       <img style={{height: props.size}} src={props.color === "black" ? "/assets/logo.png" : "/assets/logo-light.png"} alt="GEAR" />
       <h1 style={{fontSize: props.size, color: props.color}}>785C</h1>
     </div>
-  );
+  )
 }
 
-export default Loading;
+export default Loading

@@ -1,14 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
 import './app.css'
-import Navbar from "../navbar/navbar";
-import NoPage from "../no-page/no-page";
-import Home from "../home/home";
-import MeetTheTeam from "../meet-the-team/meet-the-team";
-import DownloadApp from "../download-app/download-app";
-import ContactUs from "../contact-us/contact-us";
-import SponsorUs from "../sponsor-us/sponsor-us";
-import Competitions from "../competitions/competitions";
-import Awards from "../awards/award";
+import Navbar from "../navbar/navbar"
+import NoPage from "../no-page/no-page"
+import Home from "../home/home"
+import MeetTheTeam from "../meet-the-team/meet-the-team"
+import DownloadApp from "../download-app/download-app"
+import ContactUs from "../contact-us/contact-us"
+import SponsorUs from "../sponsor-us/sponsor-us"
+import Competitions from "../competitions/competitions"
+import Awards from "../awards/award"
 
 function App() {
     // Set up navigation by mapping each element to a path

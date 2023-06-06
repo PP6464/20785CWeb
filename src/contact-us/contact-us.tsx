@@ -1,5 +1,5 @@
 import './contact-us.css'
-import {useEffect, useState} from "react";
+import {useEffect, useState} from "react"
 
 function ContactUs() {
     const [teamContacts, setTeamContacts] = useState([]) // Save variable to page state, so not lost when page rerendered 

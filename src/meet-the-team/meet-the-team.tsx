@@ -1,5 +1,5 @@
-import './meet-the-team.css';
-import {useEffect, useState} from "react";
+import './meet-the-team.css'
+import {useEffect, useState} from "react"
 
 function MeetTheTeam() {
     const [members, setMembers] = useState([]) // Save to page state to not lose information when page rerendered

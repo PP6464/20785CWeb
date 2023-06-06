@@ -1,9 +1,9 @@
-import {Outlet, useLocation} from "react-router-dom";
-import './navbar.css';
-import NavbarOption from "./option/navbar-option";
-import Loading from "../loading/loading";
-import {useEffect, useState} from "react";
-import Marquee from "react-fast-marquee";
+import {Outlet, useLocation} from "react-router-dom"
+import './navbar.css'
+import NavbarOption from "./option/navbar-option"
+import Loading from "../loading/loading"
+import {useEffect, useState} from "react"
+import Marquee from "react-fast-marquee"
 
 function Navbar() {
     const [index, setIndex] = useState<number | null>(0) // Save to page state, so not lost when page rerendered
@@ -27,7 +27,7 @@ function Navbar() {
                 timer = null
                 fn()
             }, ms)
-        };
+        }
     }
 
     function hideSmallDiv() {
@@ -63,7 +63,7 @@ function Navbar() {
         }
     }
 
-    const [width, setWidth] = useState(0); // Save to page state, so not lost when page rerendered
+    const [width, setWidth] = useState(0) // Save to page state, so not lost when page rerendered
     useEffect(() => {
         const windowResizeListener = debounce(() => {
             setWidth(window.innerWidth)
