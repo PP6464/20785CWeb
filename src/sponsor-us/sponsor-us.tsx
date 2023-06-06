@@ -1,19 +1,23 @@
 import './sponsor-us.css'
 import {useState, useEffect} from 'react'
+import Loading from '../loading/loading'
 
 function SponsorUs() {
     const [sponsors, setSponsors] = useState([]) // Save to page state to not lose information when page rerendered
-    const [companyName, setCompanyName] = useState("")
-    const [companyDetails, setCompanyDetails] = useState("")
-    const [companyEmail, setCompanyEmail] = useState("")
+    const [companyName, setCompanyName] = useState("") // Company name
+    const [companyEmail, setCompanyEmail] = useState("") // Company email to be emailed back on
+    const [companyDetails, setCompanyDetails] = useState("") // Company terms for sponsorship
+    const [loading, setLoading] = useState(false) // Display loading animation
 
     function loadSponsors() {
+        setLoading(true) // Show loading animation
         fetch("/data/sponsors.json").then(sponsors => {
             sponsors.json().catch(_ => {
             }).then(data => {
                 setSponsors(data)
             })
-        })
+        }) // Load current sponsors data
+        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadSponsors, []) // run on page lauch once
@@ -22,7 +26,7 @@ function SponsorUs() {
         <div id="sponsor-us-container">
             <h1 style={{textDecoration: "underline"}}>Sponsor Us:</h1>
             {
-                sponsors.length === 0 ?
+                loading ? <Loading size="16vw" color="black" /> : sponsors.length === 0 ?
                     <h3>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
                         <h1 style={{textAlign: "center"}}>Our sponsors so far:</h1>
                         {

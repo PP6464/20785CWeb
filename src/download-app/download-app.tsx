@@ -6,15 +6,15 @@ function DownloadApp() {
         "version": "1.0.0+1", // Version number
         "features": [], // List of features to display for app
         "link": "https://play.google.com/store/apps/details?id=com.chat.commenter", // Mock link, will be replaced by actual link for 20785C app
-    }) // Save to page state to not lose when page rerendered
+    }) // App data
 
-    function loadAppData() { // Load app data from /data/20785C-app.json url (corresponds to /public/data/20785C-app.json)
+    function loadAppData() {
         fetch("/data/20785C-app.json").then(app => {
             app.json().catch(_ => {}).then((data: any) => {
                 setAppData(data)
             })
         })
-    }
+    } // Load app data from /data/20785C-app.json url (corresponds to /public/data/20785C-app.json)
     useEffect(loadAppData, []) // run on page launch once
 
     return (

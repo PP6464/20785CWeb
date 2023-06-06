@@ -1,16 +1,20 @@
 import './meet-the-team.css'
 import {useEffect, useState} from "react"
+import Loading from '../loading/loading'
 
 function MeetTheTeam() {
-    const [members, setMembers] = useState([]) // Save to page state to not lose information when page rerendered
+    const [members, setMembers] = useState([]) // List of team members
+    const [loading, setLoading] = useState(false) // Show loading animation or not
 
-    function loadMembers() { // Load team members data from /data/team-members.json url (corresponds to /public/data/team-members.json)
+    function loadMembers() {
+        setLoading(true) // Show loading animation
         fetch("/data/team-members.json").then(members =>
             members.json().catch(_ => {
             }).then(data => {
                 setMembers(data)
             })
-        )
+            ) // Load team members data from /data/team-members.json url (corresponds to /public/data/team-members.json)
+        setLoading(false) // Hide loading animation
     }
     useEffect(loadMembers, []) // run on page lauch once
 
@@ -19,7 +23,7 @@ function MeetTheTeam() {
             <h1 style={{textDecoration: "underline"}}>Meet the Team:</h1>
             <div style={{width: "100%"}}>
                 {
-                    members.map((member: any, index: number) => (
+                    loading ? <Loading size="16vw" color="black" /> : members.map((member: any, index: number) => (
                         <div key={index} className="member-outer-div"
                              data-on-left={(index % 2 === 0).toString()}>
                             <div className="member-inner-div" data-on-left={(index % 2 === 0).toString()}>

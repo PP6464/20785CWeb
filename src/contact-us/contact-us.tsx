@@ -1,19 +1,24 @@
 import './contact-us.css'
 import {useEffect, useState} from "react"
+import Loading from '../loading/loading'
 
 function ContactUs() {
-    const [teamContacts, setTeamContacts] = useState([]) // Save variable to page state, so not lost when page rerendered 
-    const [individualContacts, setIndividualContacts] = useState([]) // Save variable to page state, so not lost when page rerendered
+    const [teamContacts, setTeamContacts] = useState([]) // Team contact details
+    const [individualContacts, setIndividualContacts] = useState([]) // Contact details for each team member individually
+    const [loading, setLoading] = useState(false) // Show or hide loading animation
 
-    function loadContactInfo() { // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
+    function loadContactInfo() {
+        setLoading(true) // Show loading animation
         fetch("/data/contacts.json").then(contacts => {
             contacts.json().catch(_ => {
             }).then((data: any) => {
                 setTeamContacts(data["team"])
                 setIndividualContacts(data["individual"])
             })
-        })
+        }) // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
+        setLoading(false) // Hide loading animation
     }
+
     useEffect(loadContactInfo, []) // run on page launch once
 
     return (
@@ -22,7 +27,7 @@ function ContactUs() {
             <h3 style={{fontSize: "30px"}}>Team</h3>
             {
                 // Renders team contact details with image, value, name and redirect (see /public/data/contact.json for example)
-                teamContacts.map((contact: any, index: number) => (
+                loading ? <Loading size="16vw" color="black" /> : teamContacts.map((contact: any, index: number) => (
                     <a className="team-contact-link" key={index} href={contact.redirect} target="_blank"
                        rel="noreferrer">
                         <img src={contact.image} alt={contact.name}
@@ -35,7 +40,7 @@ function ContactUs() {
             <div style={{display: "flex", width: "20vw", flexDirection: "column", justifyContent: "flex-start"}}>
                 {
                     // Render Discord and email contact details for each member of team (with corresponding redirects)
-                    individualContacts.map((contact: any, index: number) => (
+                    loading ? <Loading size="16vw" color="black" /> : individualContacts.map((contact: any, index: number) => (
                         <div key={index} className="individual-contact-outer">
                             <h3>{contact.name}</h3>
                             <div className="individual-contact-details">

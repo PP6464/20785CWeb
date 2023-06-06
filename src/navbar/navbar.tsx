@@ -6,19 +6,23 @@ import {useEffect, useState} from "react"
 import Marquee from "react-fast-marquee"
 
 function Navbar() {
-    const [index, setIndex] = useState<number | null>(0) // Save to page state, so not lost when page rerendered
-    const [sponsors, setSponsors] = useState([]) // Save to page state, so not lost when page rerendered
-    const [showDropDown, setShowDropDown] = useState(false) // Save to page state, so not lost when page rerendered
+    const [index, setIndex] = useState<number | null>(0) // Selected page index
+    const [sponsors, setSponsors] = useState([]) // List of our sponsors
+    const [showDropDown, setShowDropDown] = useState(false) // Show the div below more button for all pages
     const location = useLocation() // Use current page location
+    const [loading, setLoading] = useState(false) // Show or hide loading animation
     function loadSponsors() {
+        setLoading(true) // Show loading animation
         fetch("/data/sponsors.json").then(sponsors => {
             sponsors.json().catch(_ => {
             }).then(data => {
                 setSponsors(data)
             })
-        })
+        }) // Load sponsors data from /data/sponsors.json url (corresponds to /public/data/sponsors.json)
+        setLoading(false) // Hide loading animation
     }
 
+    // Only run once every `ms` milliseconds
     function debounce(fn: () => any, ms: number) {
         let timer: any
         return (_: any) => {
@@ -30,10 +34,12 @@ function Navbar() {
         }
     }
 
+    // Hide the div below more button to show pages
     function hideSmallDiv() {
         setShowDropDown(false)
     }
 
+    // Show rolling marquee of sponsors or static div if sponsors width not large enough to require rolling
     function decideMarqueeShouldPlay() {
         try {
             return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.05 + 10) * sponsors.length
@@ -42,6 +48,7 @@ function Navbar() {
         }
     }
 
+    // Convert route to index
     function indexForRoute(route: string): number | null {
         switch (route) {
             case "/":
@@ -74,7 +81,7 @@ function Navbar() {
     useEffect(loadSponsors, []) // run on page lauch once
     useEffect(() => {
         setIndex(indexForRoute(location.pathname))
-    }, [location])
+    }, [location]) // Run whenever location changes
 
     return (
         <header id="navbar-root">
@@ -93,7 +100,7 @@ function Navbar() {
                             </div> :
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </a>
-                    {sponsors.length === 0 ? <div style={{
+                    {loading ? <Loading size="5vh" color="white" /> : sponsors.length === 0 ? <div style={{
                             color: "white",
                             display: "flex",
                             alignItems: "center",
