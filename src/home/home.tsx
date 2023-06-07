@@ -3,6 +3,8 @@ import {useEffect, useState} from 'react'
 import {collection, onSnapshot} from 'firebase/firestore'
 import {firestore} from '../firebase/firebase';
 import Loading from '../loading/loading';
+import ReactModal from 'react-modal'
+import ReactPlayer from 'react-player';
 
 type Feed = {
     title: string,
@@ -14,7 +16,9 @@ type Feed = {
 function Home() {
     const [feeds, setFeeds] = useState<Feed[]>([]) // Feeds for the home page
     const [category, setCategory] = useState("all") // Whether text, video or all feeds
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false) // Show or hide loading animation
+    const [feedModalOpen, setFeedModalOpen] = useState(false) // Control whether or not modal for feed is open
+    const [selectedFeed, setSelectedFeed] = useState<Feed | null>(null) // Selected feed
 
     function loadFeeds() {
         setLoading(true) // Show loading animation
@@ -50,13 +54,30 @@ function Home() {
             </select>
             {
                 loading ? <Loading size="16vw" color="black"/> : feeds.map((feed: Feed, index: number) => (
-                    <div key={index} className="feed-outer">
+                    <div key={index} className="feed-outer" onClick={() => {
+                        setSelectedFeed(feed)
+                        setFeedModalOpen(true)
+                    }}>
                         <h1>{feed.title}</h1>
                         <h3>{feed.time}</h3>
                         <p>{feed.type}</p>
                     </div>
                 ))
             }
+            <ReactModal
+                isOpen={feedModalOpen}
+                contentLabel="feed"
+                onRequestClose={() => {
+                    setFeedModalOpen(false)
+                    setSelectedFeed(null)
+                }}>
+                <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                    <h1>{selectedFeed?.title}</h1>
+                    {
+                        selectedFeed?.type === "video" ? <ReactPlayer url={selectedFeed.value} controls={true} width="70vw" height="70vh"/> : <p>{selectedFeed?.value}</p>
+                    }
+                </div>
+            </ReactModal>
         </div>
     )
 }

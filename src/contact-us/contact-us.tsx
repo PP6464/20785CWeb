@@ -16,7 +16,7 @@ function ContactUs() {
                 setIndividualContacts(data["individual"])
             })
         }) // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
-        setLoading(false) // Hide loading animation
+        setTimeout(() => setLoading(false), 1000) // Hide loading animation
     }
 
     useEffect(loadContactInfo, []) // run on page launch once
@@ -24,10 +24,10 @@ function ContactUs() {
     return (
         <div id="contact-us-container">
             <h1 style={{textDecoration: "underline", fontWeight: "bold", marginBottom: "0"}}>Contact Us:</h1>
-            <h3 style={{fontSize: "30px"}}>Team</h3>
+            loading ? <div></div> : <h3 style={{fontSize: "30px"}}>Team</h3>
             {
                 // Renders team contact details with image, value, name and redirect (see /public/data/contact.json for example)
-                loading ? <Loading size="16vw" color="black" /> : teamContacts.map((contact: any, index: number) => (
+                loading ? <Loading size="16vw" color="black"/> : teamContacts.map((contact: any, index: number) => (
                     <a className="team-contact-link" key={index} href={contact.redirect} target="_blank"
                        rel="noreferrer">
                         <img src={contact.image} alt={contact.name}
@@ -36,11 +36,11 @@ function ContactUs() {
                     </a>
                 ))
             }
-            <h3 style={{fontSize: "30px"}}>Individuals</h3>
+            loading ? <div></div><h3 style={{fontSize: "30px"}}>Individuals</h3>
             <div style={{display: "flex", width: "20vw", flexDirection: "column", justifyContent: "flex-start"}}>
                 {
                     // Render Discord and email contact details for each member of team (with corresponding redirects)
-                    loading ? <Loading size="16vw" color="black" /> : individualContacts.map((contact: any, index: number) => (
+                    loading ? <div></div> : individualContacts.map((contact: any, index: number) => (
                         <div key={index} className="individual-contact-outer">
                             <h3>{contact.name}</h3>
                             <div className="individual-contact-details">
