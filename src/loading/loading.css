@@ -8,7 +8,7 @@
 #loading-container h1 {
     font-weight: bold;
     animation: fade-out-in 2s infinite;
-    margin: 0px;
+    margin: 0;
 }
 
 #loading-container img {
