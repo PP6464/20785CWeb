@@ -1,7 +1,8 @@
-import { initializeApp } from 'firebase/app'
-import firebase from "firebase/compat";
+import {initializeApp} from "firebase/app"
+import "firebase/firestore"
+import { getFirestore } from "firebase/firestore"
 
-initializeApp({
+const app = initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
     appId: process.env.REACT_APP_FIREBASE_APP_ID,
     authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -11,5 +12,4 @@ initializeApp({
     measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
     projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
 })
-
-export const firestore = firebase.firestore()
+export const firestore = getFirestore(app)

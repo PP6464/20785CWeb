@@ -1,0 +1,15 @@
+#home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.feed-outer {
+    elevation: higher;
+    box-shadow: 0 0 5px #CCCCCC;
+    border-radius: 30px;
+    width: 100%;
+    margin: 5px 10px 5px 10px;
+    padding: 0 10px;
+}
