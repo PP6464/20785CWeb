@@ -4,3 +4,20 @@
     align-items: center;
     justify-content: flex-start;
 }
+
+.competition-outer {
+    elevation: higher;
+    box-shadow: 0 0 5px #CCCCCC;
+    border-radius: 30px;
+    width: 100%;
+    margin: 5px 20px 5px 20px;
+    padding: 0 10px;
+}
+
+.empty {
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+    background: green;
+}
