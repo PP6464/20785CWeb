@@ -13,3 +13,16 @@
     margin: 5px 10px 5px 10px;
     padding: 0 10px;
 }
+
+#close-button {
+    height: min(30px, 7.5vw);
+    border-radius: min(15px, 3.75vw);
+    margin-right: 10px;
+    position: absolute;
+    right: 0;
+}
+
+#close-button:hover {
+    cursor: pointer;
+    background: #CCCCCC;
+}

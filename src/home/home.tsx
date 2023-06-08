@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react'
 import {collection, onSnapshot} from 'firebase/firestore'
 import {firestore} from '../firebase/firebase';
 import Loading from '../loading/loading';
-import ReactModal from 'react-modal'
 import ReactPlayer from 'react-player';
 
 type Feed = {
@@ -17,7 +16,6 @@ function Home() {
     const [feeds, setFeeds] = useState<Feed[]>([]) // Feeds for the home page
     const [category, setCategory] = useState("all") // Whether text, video or all feeds
     const [loading, setLoading] = useState(false) // Show or hide loading animation
-    const [feedModalOpen, setFeedModalOpen] = useState(false) // Control whether or not modal for feed is open
     const [selectedFeed, setSelectedFeed] = useState<Feed | null>(null) // Selected feed
 
     function loadFeeds() {
@@ -40,44 +38,59 @@ function Home() {
         setLoading(false) // Hide loading animation
     }
 
-    useEffect(loadFeeds, [category])
+    useEffect(loadFeeds, [category]) // Run whenever category changes
 
     return (
         <div id="home-container">
-            <h1>Home</h1>
-            <select style={{fontSize: "25px"}} onChange={(e) => {
-                setCategory(e.target.value)
-            }}>
-                <option value="all">All</option>
-                <option value="video">Video</option>
-                <option value="text">Text</option>
-            </select>
             {
-                loading ? <Loading size="16vw" color="black"/> : feeds.map((feed: Feed, index: number) => (
-                    <div key={index} className="feed-outer" onClick={() => {
-                        setSelectedFeed(feed)
-                        setFeedModalOpen(true)
+                selectedFeed === null ?
+                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%"}}>
+                        <h1 style={{textAlign: "center"}}>Home</h1>
+                        <select style={{fontSize: "25px"}} onChange={(e) => {
+                            setCategory(e.target.value)
+                        }}>
+                            <option value="all">All</option>
+                            <option value="video">Video</option>
+                            <option value="text">Text</option>
+                        </select>
+                        {
+                            loading ? <Loading size="16vw" color="black"/> : feeds.map((feed: Feed, index: number) => (
+                                <div key={index} className="feed-outer" onClick={() => {
+                                    setSelectedFeed(feed)
+                                }}>
+                                    <h1>{feed.title}</h1>
+                                    <h3>{feed.time}</h3>
+                                    <p>{feed.type}</p>
+                                </div>
+                            ))
+                        }
+                    </div> : <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        position: "relative",
+                        width: "100%"
                     }}>
-                        <h1>{feed.title}</h1>
-                        <h3>{feed.time}</h3>
-                        <p>{feed.type}</p>
+                        <div style={{
+                            display: "flex",
+                            position: "relative",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            width: "100%"
+                        }}>
+                            <h1 style={{textAlign: "center", maxWidth: "75vw"}}>{selectedFeed.title}</h1>
+                            <img src="/assets/close.png" alt="close" id="close-button" onClick={() => {
+                                setSelectedFeed(null)
+                            }}/>
+                        </div>
+                        {
+                            selectedFeed.type === "video" ?
+                                <ReactPlayer url={selectedFeed.value} controls={true} width="90vw" height="54vh"/> :
+                                <p style={{textAlign: "justify", margin: "0 20px"}}>{selectedFeed.value}</p>
+                        }
                     </div>
-                ))
             }
-            <ReactModal
-                isOpen={feedModalOpen}
-                contentLabel="feed"
-                onRequestClose={() => {
-                    setFeedModalOpen(false)
-                    setSelectedFeed(null)
-                }}>
-                <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
-                    <h1>{selectedFeed?.title}</h1>
-                    {
-                        selectedFeed?.type === "video" ? <ReactPlayer url={selectedFeed.value} controls={true} width="70vw" height="70vh"/> : <p>{selectedFeed?.value}</p>
-                    }
-                </div>
-            </ReactModal>
         </div>
     )
 }
