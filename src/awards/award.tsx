@@ -40,7 +40,7 @@ function Awards() {
             <h1>Awards</h1>
             <label htmlFor="awards-season-select" style={{fontSize: "25px"}}>Season: </label>
             <select onChange={(e) => setSeason(e.target.value)}
-                    style={{fontSize: "25px", marginBottom: "10px"}}>
+                    style={{fontSize: "25px", marginBottom: "10px"}} value={season}>
                 <option value="181">2023-24</option>
                 <option value="173">2022-23</option>
                 <option value="154">2021-22</option>

@@ -46,9 +46,7 @@ function Home() {
                 selectedFeed === null ?
                     <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%"}}>
                         <h1 style={{textAlign: "center"}}>Home</h1>
-                        <select style={{fontSize: "25px"}} onChange={(e) => {
-                            setCategory(e.target.value)
-                        }}>
+                        <select style={{fontSize: "25px"}} onChange={(e) => {setCategory(e.target.value)}} value={category}>
                             <option value="all">All</option>
                             <option value="video">Video</option>
                             <option value="text">Text</option>
