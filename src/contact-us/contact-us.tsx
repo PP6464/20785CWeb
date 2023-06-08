@@ -24,7 +24,7 @@ function ContactUs() {
     return (
         <div id="contact-us-container">
             <h1 style={{textDecoration: "underline", fontWeight: "bold", marginBottom: "0"}}>Contact Us:</h1>
-            loading ? <div></div> : <h3 style={{fontSize: "30px"}}>Team</h3>
+            {loading ? <div></div> : <h3 style={{fontSize: "30px"}}>Team</h3>}
             {
                 // Renders team contact details with image, value, name and redirect (see /public/data/contact.json for example)
                 loading ? <Loading size="16vw" color="black"/> : teamContacts.map((contact: any, index: number) => (
@@ -36,7 +36,7 @@ function ContactUs() {
                     </a>
                 ))
             }
-            loading ? <div></div><h3 style={{fontSize: "30px"}}>Individuals</h3>
+            {loading ? <div></div> : <h3 style={{fontSize: "30px"}}>Individuals</h3>}
             <div style={{display: "flex", width: "20vw", flexDirection: "column", justifyContent: "flex-start"}}>
                 {
                     // Render Discord and email contact details for each member of team (with corresponding redirects)
