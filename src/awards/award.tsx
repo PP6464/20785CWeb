@@ -39,7 +39,7 @@ function Awards() {
         <div id="awards-container">
             <h1>Awards</h1>
             <label htmlFor="awards-season-select" style={{fontSize: "25px"}}>Season: </label>
-            <select id="awards-season-select" onChange={(e) => setSeason(e.target.value)}
+            <select onChange={(e) => setSeason(e.target.value)}
                     style={{fontSize: "25px", marginBottom: "10px"}}>
                 <option value="181">2023-24</option>
                 <option value="173">2022-23</option>
@@ -52,8 +52,9 @@ function Awards() {
                 loading ? <div>
                     <Loading color="black" size="16vw"/>
                 </div> : awards.length === 0 ?
-                    <p style={{fontSize: "20px", textAlign: "center"}}>No awards for this
-                        season</p> : awards.map((award: Award, index: number) => (
+                    <p style={{fontSize: "20px", textAlign: "center"}}>
+                        No awards for this season
+                    </p> : awards.map((award: Award, index: number) => (
                         <div key={index} className="award-outer">
                             <h1>{award.title}</h1>
                             <p>{award.eventName}</p>
