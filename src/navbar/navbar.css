@@ -9,10 +9,6 @@ nav {
     width: 100%;
 }
 
-header {
-    margin-top: 20vh;
-}
-
 #navbar-ul {
     list-style: none;
     display: flex;
@@ -106,6 +102,10 @@ header {
     #navbar-ul {
         display: none;
     }
+
+    header {
+        margin-top: 25vh;
+    }
 }
 
 @media only screen and (min-width: 1360px) {
@@ -115,5 +115,9 @@ header {
 
     #navbar-ul {
         display: flex;
+    }
+
+    header {
+        margin-top: 20vh;
     }
 }
