@@ -16,7 +16,7 @@ function ContactUs() {
                 setIndividualContacts(data["individual"])
             })
         }) // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
-        setTimeout(() => setLoading(false), 1000) // Hide loading animation
+        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadContactInfo, []) // run on page launch once
