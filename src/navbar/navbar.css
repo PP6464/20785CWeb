@@ -1,6 +1,12 @@
 nav {
     display: flex;
     flex-direction: column;
+    elevation: higher;
+    box-shadow: 0 10px 10px #BBBBBB;
+    background: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 #navbar-ul {

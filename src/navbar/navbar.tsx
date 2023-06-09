@@ -85,7 +85,7 @@ function Navbar() {
 
     return (
         <header id="navbar-root">
-            <nav style={{background: "black"}}>
+            <nav>
                 <div id="top-bar">
                     <a style={{
                         paddingLeft: "2vw",
@@ -178,7 +178,7 @@ function Navbar() {
                     </div>
                 </div>
             </nav>
-            <Outlet/>
+            <Outlet />
         </header>
     )
 }
