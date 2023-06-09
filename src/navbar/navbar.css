@@ -9,6 +9,10 @@ nav {
     width: 100%;
 }
 
+header {
+    margin-top: 20vh;
+}
+
 #navbar-ul {
     list-style: none;
     display: flex;
