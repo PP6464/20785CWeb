@@ -28,9 +28,9 @@ function Awards() {
                         eventName: award.event.name,
                     }
                 }))
+                setLoading(false) // Hide loading animation
             })
         }) // Load awards from selected season
-        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadAwards, [season]) // Run whenever season changes

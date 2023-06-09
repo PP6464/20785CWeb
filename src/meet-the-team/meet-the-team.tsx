@@ -12,9 +12,9 @@ function MeetTheTeam() {
             members.json().catch(_ => {
             }).then(data => {
                 setMembers(data)
+                setLoading(false) // Hide loading animation
             })
             ) // Load team members data from /data/team-members.json url (corresponds to /public/data/team-members.json)
-        setLoading(false) // Hide loading animation
     }
     useEffect(loadMembers, []) // run on page lauch once
 

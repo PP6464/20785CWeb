@@ -14,9 +14,9 @@ function ContactUs() {
             }).then((data: any) => {
                 setTeamContacts(data["team"])
                 setIndividualContacts(data["individual"])
+                setLoading(false) // Hide loading animation
             })
         }) // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
-        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadContactInfo, []) // run on page launch once

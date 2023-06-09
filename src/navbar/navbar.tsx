@@ -17,9 +17,9 @@ function Navbar() {
             sponsors.json().catch(_ => {
             }).then(data => {
                 setSponsors(data)
+                setLoading(false) // Hide loading animation
             })
         }) // Load sponsors data from /data/sponsors.json url (corresponds to /public/data/sponsors.json)
-        setLoading(false) // Hide loading animation
     }
 
     // Only run once every `ms` milliseconds

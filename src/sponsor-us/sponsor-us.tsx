@@ -15,9 +15,9 @@ function SponsorUs() {
             sponsors.json().catch(_ => {
             }).then(data => {
                 setSponsors(data)
+                setLoading(false) // Hide loading animation
             })
         }) // Load current sponsors data
-        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadSponsors, []) // run on page lauch once

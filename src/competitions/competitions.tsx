@@ -48,9 +48,9 @@ function Competitions() {
                         },
                     }
                 }))
+                setLoading(false) // Hide loading animation
             })
         })
-        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadCompetitions, [season])

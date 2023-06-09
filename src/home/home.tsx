@@ -34,8 +34,8 @@ function Home() {
                     }
                 })
             )
+            setLoading(false) // Hide loading animation
         }) // Listen to feeds
-        setLoading(false) // Hide loading animation
     }
 
     useEffect(loadFeeds, [category]) // Run whenever category changes
