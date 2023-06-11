@@ -26,3 +26,14 @@
     cursor: pointer;
     background: #CCCCCC;
 }
+
+#home-selected-feed-outer {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    elevation: below;
+    z-index: -1;
+}

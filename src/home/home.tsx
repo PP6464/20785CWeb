@@ -4,6 +4,7 @@ import {collection, onSnapshot} from 'firebase/firestore'
 import {firestore} from '../firebase/firebase';
 import Loading from '../loading/loading';
 import ReactPlayer from 'react-player';
+import Chip from "@mui/material/Chip";
 
 type Feed = {
     title: string,
@@ -14,7 +15,7 @@ type Feed = {
 
 function Home() {
     const [feeds, setFeeds] = useState<Feed[]>([]) // Feeds for the home page
-    const [category, setCategory] = useState("all") // Whether text, video or all feeds
+    const [category, setCategory] = useState<string[]>([]) // Text or video feeds or both
     const [loading, setLoading] = useState(false) // Show or hide loading animation
     const [selectedFeed, setSelectedFeed] = useState<Feed | null>(null) // Selected feed
 
@@ -22,7 +23,7 @@ function Home() {
         setLoading(true) // Show loading animation
         onSnapshot(collection(firestore, "home"), (snapshot) => {
             setFeeds(snapshot.docs
-                .filter((e) => e.data().type !== (category === "text" ? "video" : category === "video" ? "text" : "")) // Filter for relevant type of feed
+                .filter((e) => category.includes(e.data().type)) // Filter for relevant type of feed
                 .sort((b, a) => b.data().time.nanoseconds > a.data().time.nanoseconds ? -1 : b.data().time.nanoseconds === a.data().time.nanoseconds ? 0 : 1) // Sort by time descending
                 .map((feed) => {
                     const dateTime = feed.data().time.toDate()
@@ -46,13 +47,13 @@ function Home() {
                 selectedFeed === null ?
                     <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%"}}>
                         <h1 style={{textAlign: "center"}}>Home</h1>
-                        <select style={{fontSize: "25px"}} onChange={(e) => {setCategory(e.target.value)}} value={category}>
-                            <option value="all">All</option>
-                            <option value="video">Video</option>
-                            <option value="text">Text</option>
-                        </select>
+                        <div style={{display: "flex"}}>
+                        <Chip label="Text" onClick={() => setCategory(category.concat("text"))}/>
+                            <div></div>
+                        <Chip label="Video" onClick={() => setCategory(category.concat("video"))}/>
+                        </div>
                         {
-                            loading ? <Loading size="16vw" color="black"/> : feeds.map((feed: Feed, index: number) => (
+                            loading ? <Loading size="16vw" color="black" inAppBar={false}/> : feeds.map((feed: Feed, index: number) => (
                                 <div key={index} className="feed-outer" onClick={() => {
                                     setSelectedFeed(feed)
                                 }}>
@@ -62,14 +63,7 @@ function Home() {
                                 </div>
                             ))
                         }
-                    </div> : <div style={{
-                        display: "flex",
-                        alignItems: "center",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        position: "relative",
-                        width: "100%"
-                    }}>
+                    </div> : <div id="home-selected-feed-outer">
                         <div style={{
                             display: "flex",
                             position: "relative",
