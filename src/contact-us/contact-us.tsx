@@ -27,7 +27,7 @@ function ContactUs() {
             {loading ? <div></div> : <h3 style={{fontSize: "30px"}}>Team</h3>}
             {
                 // Renders team contact details with image, value, name and redirect (see /public/data/contact.json for example)
-                loading ? <Loading size="16vw" color="black"/> : teamContacts.map((contact: any, index: number) => (
+                loading ? <Loading size="16vw" color="black" inAppBar={false}/> : teamContacts.map((contact: any, index: number) => (
                     <a className="team-contact-link" key={index} href={contact.redirect} target="_blank"
                        rel="noreferrer">
                         <img src={contact.image} alt={contact.name}

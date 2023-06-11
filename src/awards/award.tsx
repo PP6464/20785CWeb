@@ -50,7 +50,7 @@ function Awards() {
             </select>
             {
                 loading ? <div>
-                    <Loading color="black" size="16vw"/>
+                    <Loading color="black" size="16vw" inAppBar={false}/>
                 </div> : awards.length === 0 ?
                     <p style={{fontSize: "20px", textAlign: "center"}}>
                         No awards for this season

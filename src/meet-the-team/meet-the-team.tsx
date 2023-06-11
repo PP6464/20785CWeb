@@ -23,7 +23,7 @@ function MeetTheTeam() {
             <h1 style={{textDecoration: "underline"}}>Meet the Team:</h1>
             <div style={{width: "100%"}}>
                 {
-                    loading ? <Loading size="16vw" color="black" /> : members.map((member: any, index: number) => (
+                    loading ? <Loading size="16vw" color="black" inAppBar={false}/> : members.map((member: any, index: number) => (
                         <div key={index} className="member-outer-div"
                              data-on-left={(index % 2 === 0).toString()}>
                             <div className="member-inner-div" data-on-left={(index % 2 === 0).toString()}>

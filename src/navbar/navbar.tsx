@@ -95,12 +95,12 @@ function Navbar() {
                         textDecoration: "none"
                     }} href="/" target="_blank" rel="noreferrer">
                         {width > 650 ?
-                            <div id="logo-large-container"><Loading size="5vh" color="white"/>
+                            <div id="logo-large-container"><Loading inAppBar={true} size="5vh" color="white"/>
                                 <h1 style={{margin: "0px", padding: "0px", width: "fit-content"}}>Override</h1>
                             </div> :
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </a>
-                    {loading ? <Loading size="5vh" color="white" /> : sponsors.length === 0 ? <div style={{
+                    {loading ? <Loading inAppBar={true} size="5vh" color="white" /> : sponsors.length === 0 ? <div style={{
                             color: "white",
                             display: "flex",
                             alignItems: "center",

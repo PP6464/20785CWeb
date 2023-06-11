@@ -16,6 +16,7 @@ type Competition = {
     name: string // Name of the event
     date: string // Date of the event
     location: Location // Where event took place
+    id: number // ID of the event
 }
 
 function Competitions() {
@@ -46,6 +47,7 @@ function Competitions() {
                             postcode: competition.location.postcode,
                             country: competition.location.country,
                         },
+                        id: competition.id,
                     }
                 }))
                 setLoading(false) // Hide loading animation
@@ -71,7 +73,7 @@ function Competitions() {
                         <option value="125">2018-19</option>
                     </select>
                     {
-                        loading ? <Loading size="16vw" color="black"/> : competitions.length === 0 ?
+                        loading ? <Loading inAppBar={false} size="16vw" color="black"/> : competitions.length === 0 ?
                             <p style={{textAlign: "center", fontSize: "20px"}}>
                                 No competitions for this season
                             </p> : competitions.map((competition: Competition, index: number) => (
@@ -88,7 +90,8 @@ function Competitions() {
                     flexDirection: "column",
                     justifyContent: "center",
                     position: "relative",
-                    width: "100%"
+                    width: "100%",
+                    zIndex: "-1",
                 }}>
                     <div style={{
                         display: "flex",
