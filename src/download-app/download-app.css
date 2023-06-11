@@ -5,9 +5,11 @@
     align-items: center;
 }
 
-.app-feature h3::after {
+.app-feature div::after {
     content: '\002B9A';
     padding-right: 10px;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 .app-feature {

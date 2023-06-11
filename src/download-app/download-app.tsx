@@ -33,7 +33,7 @@ function DownloadApp() {
                         {
                             appData.features.map((feature: any, index: number) => (
                                 <li className="app-feature" key={index}>
-                                    <h3></h3>
+                                    <div></div>
                                     <p key={index} style={{fontSize: "20px"}}>{feature}</p>
                                 </li>
                             ))
