@@ -48,9 +48,9 @@ function Home() {
                     <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%"}}>
                         <h1 style={{textAlign: "center"}}>Home</h1>
                         <div style={{display: "flex"}}>
-                        <Chip label="Text" onClick={() => setCategory(category.concat("text"))}/>
-                            <div></div>
-                        <Chip label="Video" onClick={() => setCategory(category.concat("video"))}/>
+                            <Chip label="Text" onClick={() => setCategory(category.includes("text") ? category.filter((e) => e !== "text") : category.concat("text"))} variant={category.includes("text") ? "filled" : "outlined"}/>
+                        <div style={{padding: "25px 5px"}}></div>
+                            <Chip label="Video" onClick={() => setCategory(category.includes("video") ? category.filter((e) => e !== "video") : category.concat("video"))} variant={category.includes("video") ? "filled" : "outlined"}/>
                         </div>
                         {
                             loading ? <Loading size="16vw" color="black" inAppBar={false}/> : feeds.map((feed: Feed, index: number) => (
