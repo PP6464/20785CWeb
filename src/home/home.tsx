@@ -15,7 +15,7 @@ type Feed = {
 
 function Home() {
     const [feeds, setFeeds] = useState<Feed[]>([]) // Feeds for the home page
-    const [category, setCategory] = useState<string[]>([]) // Text or video feeds or both
+    const [category, setCategory] = useState<string[]>(["text, "video"]) // Text or video feeds or both
     const [loading, setLoading] = useState(false) // Show or hide loading animation
     const [selectedFeed, setSelectedFeed] = useState<Feed | null>(null) // Selected feed
 
