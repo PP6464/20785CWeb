@@ -1,28 +1,17 @@
 import {useEffect, useState} from 'react'
 import './competitions.css'
-import Loading from "../loading/loading";
-import Chip from '@mui/material/Chip';
-
-type Location = {
-    venue: string // Venue
-    addressLine1: string | null // Address line 1
-    addressLine2: string | null // Address line 2
-    city: string // City
-    region: string // Region
-    postcode: string // Postcode
-    country: string // Country
-}
+import Loading from "../loading/loading"
+import Chip from '@mui/material/Chip'
 
 type Competition = {
     name: string // Name of the event
     date: string // Date of the event
-    location: Location // Where event took place
-    id: number // ID of the event
+    sku: string // ID of the event
 }
 
 function Competitions() {
     const [competitions, setCompetitions] = useState<Competition[]>([]) // List of competitions
-    const [seasons, setSeasons] = useState(["181"]) // Season ID
+    const [seasons, setSeasons] = useState(["154"]) // Season ID
     const [loading, setLoading] = useState(false) // Controls whether to display loading animation
     const [selectedCompetition, setSelectedCompetition] = useState<Competition | null>(null) // Selected competition
 
@@ -39,16 +28,7 @@ function Competitions() {
                     return {
                         name: competition.name,
                         date: competition.start !== competition.end ? `${competition.start.split("T")[0].split("-").reverse().join("/")} to ${competition.end.split("T")[0].split("-").reverse().join("/")}` : competition.start.split("T")[0].split("-").reverse().join("/"), // Convert date into proper format
-                        location: {
-                            venue: competition.location.venue,
-                            addressLine1: competition.location.address_1,
-                            addressLine2: competition.location.address_2,
-                            city: competition.location.city,
-                            region: competition.location.region,
-                            postcode: competition.location.postcode,
-                            country: competition.location.country,
-                        },
-                        id: competition.id,
+                        sku: competition.sku,
                     }
                 }))
                 setLoading(false) // Hide loading animation
@@ -121,36 +101,7 @@ function Competitions() {
                             setSelectedCompetition(null)
                         }}/>
                     </div>
-                    <h3>{selectedCompetition.date}</h3>
-                    <p>Location:</p>
-                    {
-                        !(selectedCompetition.location.venue === null || selectedCompetition.location.venue === "") ?
-                            <p>{selectedCompetition.location.venue}</p> : <div className="empty"></div>
-                    }
-                    {
-                        !(selectedCompetition.location.addressLine1 === null || selectedCompetition.location.addressLine1 === "") ?
-                            <p>{selectedCompetition.location.addressLine1}</p> : <div className="empty"></div>
-                    }
-                    {
-                        !(selectedCompetition.location.addressLine2 === null || selectedCompetition.location.addressLine2 === "") ?
-                            <p>{selectedCompetition.location.addressLine2}</p> : <div className="empty"></div>
-                    }
-                    {
-                        !(selectedCompetition.location.city === null || selectedCompetition.location.city === "") ?
-                            <p>{selectedCompetition.location.city}</p> : <div className="empty"></div>
-                    }
-                    {
-                        !(selectedCompetition.location.region === null || selectedCompetition.location.region === "") ?
-                            <p>{selectedCompetition.location.region}</p> : <div className="empty"></div>
-                    }
-                    {
-                        !(selectedCompetition.location.postcode === null || selectedCompetition.location.postcode === "") ?
-                            <p>{selectedCompetition.location.postcode}</p> : <div className="empty"></div>
-                    }
-                    {
-                        !(selectedCompetition.location.country === null || selectedCompetition.location.country === "") ?
-                            <p>{selectedCompetition.location.country}</p> : <div className="empty"></div>
-                    }
+                    <iframe src={`https://robotevents.com/robot-competitions/vex-robotics-competitions/${selectedCompetition.sku}.html`} height="54vw" width="90vw"/>
                 </div>
             }
         </div>
