@@ -18,10 +18,26 @@
     .award-outer h1 {
         font-size: 15px;
     }
+
+    #awards-seasons-chips {
+        flex-direction: column;
+    }
+
+    .awards-chip-padding {
+        padding: 5px 25px;
+    }
 }
 
 @media only screen and (min-width: 560px) {
     .award-outer h1 {
         font-size: 20px;
+    }
+
+    #awards-seasons-chips {
+        flex-direction: row;
+    }
+
+    .awards-chip-padding {
+        padding: 25px 5px;
     }
 }

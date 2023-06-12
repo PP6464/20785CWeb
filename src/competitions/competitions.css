@@ -21,3 +21,23 @@
     height: 0;
     background: green;
 }
+
+@media only screen and (max-width: 560px) {
+    #competitions-seasons-chips {
+        flex-direction: column;
+    }
+
+    .competitions-chip-padding {
+        padding: 5px 25px;
+    }
+}
+
+@media only screen and (min-width: 560px) {
+    #competitions-seasons-chips {
+        flex-direction: row;
+    }
+
+    .competitions-chip-padding {
+        padding: 25px 5px;
+    }
+}

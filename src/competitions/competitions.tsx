@@ -11,7 +11,7 @@ type Competition = {
 
 function Competitions() {
     const [competitions, setCompetitions] = useState<Competition[]>([]) // List of competitions
-    const [seasons, setSeasons] = useState(["154"]) // Season ID
+    const [seasons, setSeasons] = useState(["181"]) // Season ID
     const [loading, setLoading] = useState(false) // Controls whether to display loading animation
     const [selectedCompetition, setSelectedCompetition] = useState<Competition | null>(null) // Selected competition
 
@@ -43,27 +43,27 @@ function Competitions() {
             {
                 selectedCompetition === null ? <div id="competitions-container">
                     <h1>Competitions</h1>
-                    <div style={{display: "flex", zIndex: "-1"}}>
+                    <div style={{display: "flex", zIndex: "0"}} id="competitions-seasons-chips">
                         <Chip label="2023-24" onClick={() => {
                             !seasons.includes("181") ? setSeasons(seasons.concat("181")) : setSeasons(seasons.filter((e) => e !== "181"))
                         }} variant={seasons.includes("181") ? "filled" : "outlined"}/>
-                        <div style={{padding: "25px 5px"}}></div>
+                        <div className="competitions-chip-padding"></div>
                         <Chip label="2022-23" onClick={() => {
                             !seasons.includes("173") ? setSeasons(seasons.concat("173")) : setSeasons(seasons.filter((e) => e !== "173"))
                         }} variant={seasons.includes("173") ? "filled" : "outlined"}/>
-                        <div style={{padding: "25px 5px"}}></div>
+                        <div className="competitions-chip-padding"></div>
                         <Chip label="2021-22" onClick={() => {
                             !seasons.includes("154") ? setSeasons(seasons.concat("154")) : setSeasons(seasons.filter((e) => e !== "154"))
                         }} variant={seasons.includes("154") ? "filled" : "outlined"}/>
-                        <div style={{padding: "25px 5px"}}></div>
+                        <div className="competitions-chip-padding"></div>
                         <Chip label="2020-21" onClick={() => {
                             !seasons.includes("139") ? setSeasons(seasons.concat("139")) : setSeasons(seasons.filter((e) => e !== "139"))
                         }} variant={seasons.includes("139") ? "filled" : "outlined"}/>
-                        <div style={{padding: "25px 5px"}}></div>
+                        <div className="competitions-chip-padding"></div>
                         <Chip label="2019-20" onClick={() => {
                             !seasons.includes("130") ? setSeasons(seasons.concat("130")) : setSeasons(seasons.filter((e) => e !== "130"))
                         }} variant={seasons.includes("130") ? "filled" : "outlined"}/>
-                        <div style={{padding: "25px 5px"}}></div>
+                        <div className="competitions-chip-padding"></div>
                         <Chip label="2018-19" onClick={() => {
                             !seasons.includes("125") ? setSeasons(seasons.concat("125")) : setSeasons(seasons.filter((e) => e !== "125"))
                         }} variant={seasons.includes("125") ? "filled" : "outlined"}/>
@@ -71,7 +71,7 @@ function Competitions() {
                     {
                         loading ? <Loading inAppBar={false} size="16vw" color="black"/> : competitions.length === 0 ?
                             <p style={{textAlign: "center", fontSize: "20px"}}>
-                                No competitions for this season
+                                No competitions for the selected seasons
                             </p> : competitions.map((competition: Competition, index: number) => (
                                 <div key={index} className="competition-outer"
                                      onClick={() => setSelectedCompetition(competition)}>
@@ -87,7 +87,7 @@ function Competitions() {
                     justifyContent: "center",
                     position: "relative",
                     width: "100%",
-                    zIndex: "-1",
+                    zIndex: "0",
                 }}>
                     <div style={{
                         display: "flex",
