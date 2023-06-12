@@ -3,10 +3,21 @@ import './competitions.css'
 import Loading from "../loading/loading"
 import Chip from '@mui/material/Chip'
 
+type Location = {
+    venue: string // Venue
+    addressLine1: string | null // Address line 1
+    addressLine2: string | null // Address line 2
+    city: string // City
+    region: string // Region
+    postcode: string // Postcode
+    country: string // Country
+}
+
 type Competition = {
     name: string // Name of the event
     date: string // Date of the event
     sku: string // ID of the event
+    location: Location // Where event took place
 }
 
 function Competitions() {
@@ -29,6 +40,15 @@ function Competitions() {
                         name: competition.name,
                         date: competition.start !== competition.end ? `${competition.start.split("T")[0].split("-").reverse().join("/")} to ${competition.end.split("T")[0].split("-").reverse().join("/")}` : competition.start.split("T")[0].split("-").reverse().join("/"), // Convert date into proper format
                         sku: competition.sku,
+                        location: {
+                            venue: competition.location.venue,
+                            addressLine1: competition.location.address_1,
+                            addressLine2: competition.location.address_2,
+                            city: competition.location.city,
+                            region: competition.location.region,
+                            postcode: competition.location.postcode,
+                            country: competition.location.country,
+                        },
                     }
                 }))
                 setLoading(false) // Hide loading animation
@@ -74,21 +94,21 @@ function Competitions() {
                                 No competitions for the selected seasons
                             </p> : competitions.map((competition: Competition, index: number) => (
                                 <div key={index} className="competition-outer"
-                                     onClick={() => setSelectedCompetition(competition)}>
+                                    onClick={() => setSelectedCompetition(competition)}>
                                     <h1>{competition.name}</h1>
                                     <p>{competition.date}</p>
                                 </div>
-                            ))
+                                ))
                     }
-                </div> : <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    position: "relative",
-                    width: "100%",
-                    zIndex: "0",
-                }}>
+        </div> : <div style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            justifyContent: "center",
+            position: "relative",
+            width: "100%",
+            zIndex: "0",
+        }}>
                     <div style={{
                         display: "flex",
                         position: "relative",
@@ -101,7 +121,37 @@ function Competitions() {
                             setSelectedCompetition(null)
                         }}/>
                     </div>
-                    <iframe src={`https://robotevents.com/robot-competitions/vex-robotics-competitions/${selectedCompetition.sku}.html`} height="54vw" width="90vw"/>
+                    <h3>{selectedCompetition.date}</h3>
+                    <p style={{margin: "0"}}>Location:</p>
+                    {
+                        !(selectedCompetition.location.venue === null || selectedCompetition.location.venue === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.venue}</p> : <div className="empty"></div>
+                    }
+                    {
+                        !(selectedCompetition.location.addressLine1 === null || selectedCompetition.location.addressLine1 === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.addressLine1}</p> : <div className="empty"></div>
+                    }
+                    {
+                        !(selectedCompetition.location.addressLine2 === null || selectedCompetition.location.addressLine2 === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.addressLine2}</p> : <div className="empty"></div>
+                    }
+                    {
+                        !(selectedCompetition.location.city === null || selectedCompetition.location.city === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.city}</p> : <div className="empty"></div>
+                    }
+                    {
+                        !(selectedCompetition.location.region === null || selectedCompetition.location.region === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.region}</p> : <div className="empty"></div>
+                    }
+                    {
+                        !(selectedCompetition.location.postcode === null || selectedCompetition.location.postcode === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.postcode}</p> : <div className="empty"></div>
+                    }
+                    {
+                        !(selectedCompetition.location.country === null || selectedCompetition.location.country === "") ?
+                            <p style={{margin: "0"}}>{selectedCompetition.location.country}</p> : <div className="empty"></div>
+                    }
+                    <a style={{marginTop: "10px"}} href={`https://robotevents.com/robot-competitions/vex-robotics-competitions/${selectedCompetition.sku}.html`}>Further information</a>
                 </div>
             }
         </div>
