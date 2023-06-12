@@ -32,9 +32,15 @@
 .member-info {
     display: flex;
     flex-direction: column;
-    padding-left: 10px;
-    padding-right: 10px;
     max-width: 85vw;
+}
+
+.member-info[data-on-left="true"] {
+    padding-right: 10px;
+}
+
+.member-info[data-on-left="false"] {
+    padding-left: 10px;
 }
 
 .member-info * {
@@ -44,6 +50,7 @@
 .member-inner-div img {
     padding-left: 10px;
     padding-right: 10px;
+    z-index: -1;
 }
 
 .member-inner-div[data-on-left="true"] {
