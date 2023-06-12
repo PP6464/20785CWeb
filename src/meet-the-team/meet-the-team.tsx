@@ -28,7 +28,7 @@ function MeetTheTeam() {
                              data-on-left={(index % 2 === 0).toString()}>
                             <div className="member-inner-div" data-on-left={(index % 2 === 0).toString()}>
                                 <img alt={member.name} src={member.photo} style={{borderRadius: "30%", height: "100px"}}/>
-                                <div className="member-info">
+                                <div className="member-info" data-on-left={(index % 2 === 0).toString()}>
                                     <h1>{member.name}</h1>
                                     <h3>{member.role}</h3>
                                     <p>{member.desc}</p>

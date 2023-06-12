@@ -1,6 +1,7 @@
 import './awards.css'
 import {useEffect, useState} from "react"
 import Loading from '../loading/loading'
+import Chip from '@mui/material/Chip'
 
 type Award = {
     title: string // Type of award
@@ -9,13 +10,13 @@ type Award = {
 
 function Awards() {
     const [awards, setAwards] = useState<Award[]>([]) // List of awards
-    const [season, setSeason] = useState("181") // Season ID
+    const [seasons, setSeasons] = useState(["181"]) // Season ID
     const [loading, setLoading] = useState(false) // Show or hide loading animation
 
     function loadAwards() {
         setLoading(true) // Display loading animation
         const token = process.env.REACT_APP_ROBOT_EVENTS_API_TOKEN
-        fetch(`https://www.robotevents.com/api/v2/teams/93408/awards?season%5B%5D=${season}`, {
+        fetch(`https://www.robotevents.com/api/v2/teams/93408/events?${seasons.map((e) => "season%5B%5D=" + e).join("&")}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -33,21 +34,37 @@ function Awards() {
         }) // Load awards from selected season
     }
 
-    useEffect(loadAwards, [season]) // Run whenever season changes
+    useEffect(loadAwards, [seasons]) // Run whenever season changes
 
     return (
         <div id="awards-container">
             <h1>Awards</h1>
             <label htmlFor="awards-season-select" style={{fontSize: "25px"}}>Season: </label>
-            <select onChange={(e) => setSeason(e.target.value)}
-                    style={{fontSize: "25px", marginBottom: "10px"}} value={season}>
-                <option value="181">2023-24</option>
-                <option value="173">2022-23</option>
-                <option value="154">2021-22</option>
-                <option value="139">2020-21</option>
-                <option value="130">2019-20</option>
-                <option value="125">2018-19</option>
-            </select>
+            <div style={{display: "flex", zIndex: "-1"}}>
+                <Chip label="2023-24" onClick={() => {
+                    !seasons.includes("181") ? setSeasons(seasons.concat("181")) : setSeasons(seasons.filter((e) => e !== "181"))
+                }} variant={seasons.includes("181") ? "filled" : "outlined"}/>
+                <div style={{padding: "25px 5px"}}></div>
+                <Chip label="2022-23" onClick={() => {
+                    !seasons.includes("173") ? setSeasons(seasons.concat("173")) : setSeasons(seasons.filter((e) => e !== "173"))
+                }} variant={seasons.includes("173") ? "filled" : "outlined"}/>
+                <div style={{padding: "25px 5px"}}></div>
+                <Chip label="2021-22" onClick={() => {
+                    !seasons.includes("154") ? setSeasons(seasons.concat("154")) : setSeasons(seasons.filter((e) => e !== "154"))
+                }} variant={seasons.includes("154") ? "filled" : "outlined"}/>
+                <div style={{padding: "25px 5px"}}></div>
+                <Chip label="2020-21" onClick={() => {
+                    !seasons.includes("139") ? setSeasons(seasons.concat("139")) : setSeasons(seasons.filter((e) => e !== "139"))
+                }} variant={seasons.includes("139") ? "filled" : "outlined"}/>
+                <div style={{padding: "25px 5px"}}></div>
+                <Chip label="2019-20" onClick={() => {
+                    !seasons.includes("130") ? setSeasons(seasons.concat("130")) : setSeasons(seasons.filter((e) => e !== "130"))
+                }} variant={seasons.includes("130") ? "filled" : "outlined"}/>
+                <div style={{padding: "25px 5px"}}></div>
+                <Chip label="2018-19" onClick={() => {
+                    !seasons.includes("125") ? setSeasons(seasons.concat("125")) : setSeasons(seasons.filter((e) => e !== "125"))
+                }} variant={seasons.includes("125") ? "filled" : "outlined"}/>
+            </div>
             {
                 loading ? <div>
                     <Loading color="black" size="16vw" inAppBar={false}/>
