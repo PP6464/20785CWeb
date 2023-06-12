@@ -24,7 +24,7 @@ function Competitions() {
     const [competitions, setCompetitions] = useState<Competition[]>([]) // List of competitions
     const [seasons, setSeasons] = useState(["181"]) // Season ID
     const [loading, setLoading] = useState(false) // Controls whether to display loading animation
-    const [selectedCompetition, setSelectedCompetition] = useState<Competition | null>(null)
+    const [selectedCompetition, setSelectedCompetition] = useState<Competition | null>(null) // Selected competition
 
     function loadCompetitions() {
         setLoading(true) // Show loading animation
