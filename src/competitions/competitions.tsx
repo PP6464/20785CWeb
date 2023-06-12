@@ -101,7 +101,7 @@ function Competitions() {
                             setSelectedCompetition(null)
                         }}/>
                     </div>
-                    <iframe src={`https://robotevents.com/robot-competitions/vex-robotics-competitions/${selectedCompetition.sku}.html`} height="54vw" width="90vw"/>
+                    <iframe src={`https://robotevents.com/robot-competitions/vex-robotics-competition/${selectedCompetition.sku}.html`} height="540px" width="900px" />
                 </div>
             }
         </div>
