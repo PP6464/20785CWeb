@@ -35,5 +35,5 @@
     position: relative;
     width: 100%;
     elevation: below;
-    z-index: -1;
+    z-index: 0;
 }

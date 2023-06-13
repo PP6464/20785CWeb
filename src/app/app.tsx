@@ -8,7 +8,7 @@ import DownloadApp from "../download-app/download-app"
 import ContactUs from "../contact-us/contact-us"
 import SponsorUs from "../sponsor-us/sponsor-us"
 import Competitions from "../competitions/competitions"
-import Awards from "../awards/award"
+import Awards from "../awards/awards"
 
 function App() {
     // Set up navigation by mapping each element to a path

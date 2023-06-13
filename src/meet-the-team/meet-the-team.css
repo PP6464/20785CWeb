@@ -50,7 +50,7 @@
 .member-inner-div img {
     padding-left: 10px;
     padding-right: 10px;
-    z-index: -1;
+    z-index: 0;
 }
 
 .member-inner-div[data-on-left="true"] {

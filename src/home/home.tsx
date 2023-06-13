@@ -58,7 +58,7 @@ function Home() {
                         </div>
                         {
                             loading ? <Loading size="16vw" color="black"
-                                               inAppBar={false}/> : feeds.map((feed: Feed, index: number) => (
+                                               inAppBar={false}/> : feeds.length === 0 ? <p>No feeds available</p> : feeds.map((feed: Feed, index: number) => (
                                 <div key={index} className="feed-outer" onClick={() => {
                                     setSelectedFeed(feed)
                                 }}>
