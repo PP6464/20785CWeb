@@ -16,7 +16,7 @@ function Awards() {
     function loadAwards() {
         setLoading(true) // Display loading animation
         const token = process.env.REACT_APP_ROBOT_EVENTS_API_TOKEN
-        fetch(`https://www.robotevents.com/api/v2/teams/93408/events?${seasons.map((e) => "season%5B%5D=" + e).join("&")}`, {
+        fetch(`https://www.robotevents.com/api/v2/teams/93408/awards?${seasons.map((e) => "season%5B%5D=" + e).join("&")}`, {
             headers: {
                 "Authorization": `Bearer ${token}`
             }
@@ -24,6 +24,7 @@ function Awards() {
             _awards.json().catch(_ => {
             }).then((data: any) => {
                 setAwards(data.data.map((award: any) => {
+                    console.log(award)
                     return {
                         title: award.title,
                         eventName: award.event.name,
