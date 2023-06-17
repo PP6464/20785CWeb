@@ -6,6 +6,8 @@ import Chip from '@mui/material/Chip'
 type Award = {
     title: string // Type of award
     eventName: string // Which event it was given in
+    date: string // When award was given
+    season: string // Season when award was given
 }
 
 function Awards() {
@@ -16,22 +18,52 @@ function Awards() {
     function loadAwards() {
         setLoading(true) // Display loading animation
         const token = process.env.REACT_APP_ROBOT_EVENTS_API_TOKEN
-        fetch(`https://www.robotevents.com/api/v2/teams/93408/events?${seasons.map((e) => "season%5B%5D=" + e).join("&")}`, {
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        }).then(_awards => {
-            _awards.json().catch(_ => {
-            }).then((data: any) => {
-                setAwards(data.data.map((award: any) => {
-                    return {
-                        title: award.title,
-                        eventName: award.event.name,
-                    }
-                }))
-                setLoading(false) // Hide loading animation
+        async function fetchAwards() {
+            const response = await fetch(`https://www.robotevents.com/api/v2/teams/93408/awards?${seasons.map((e) => "season%5B%5D=" + e).join("&")}`, {
+                headers: {
+                    "Authorization": `Bearer ${token}`,
+                }
             })
-        }) // Load awards from selected season
+            const data: any[] = (await response.json()).data
+            const awardsLoaded = []; // Awards loaded so far
+            for (let i = 0; i < data.length; i++) {
+                const event = (await (await fetch(`https://www.robotevents.com/api/v2/events/${data[i].event.id}`, {
+                    headers: {
+                        "Authorization": `Bearer ${token}`,
+                    }
+                })).json())
+                const eventDateString = event.start !== event.end ? `${event.start.split("T")[0].split("-").reverse().join("/")} to ${event.end.split("T")[0].split("-").reverse().join("/")}` : event.start.split("T")[0].split("-").reverse().join("/") // Convert date into proper format
+                let eventSeasonString = "" // Event season name
+                switch (event.season.id) {
+                    case 181:
+                        eventSeasonString = "Over Under"
+                        break
+                    case 173:
+                        eventSeasonString = "Spin Up"
+                        break
+                    case 154:
+                        eventSeasonString = "Tipping Point"
+                        break
+                    case 139:
+                        eventSeasonString = "Change Up"
+                        break
+                    case 130:
+                        eventSeasonString = "Tower Takeover"
+                        break
+                    case 125:
+                        eventSeasonString = "Turning Point"
+                        break
+                }
+                awardsLoaded.push({
+                    title: data[i].title,
+                    eventName: data[i].event.name,
+                    date: eventDateString,
+                    season: eventSeasonString,
+                }) // Add the award with the event date string
+            }
+            setAwards(awardsLoaded) // Save awards loaded to awards list
+        }
+        fetchAwards().then(_ => setLoading(false)).catch(console.error)
     }
 
     useEffect(loadAwards, [seasons]) // Run whenever season changes
@@ -74,6 +106,7 @@ function Awards() {
                         <div key={index} className="award-outer">
                             <h1>{award.title}</h1>
                             <p>{award.eventName}</p>
+                            <p>{award.date} ({award.season})</p>
                         </div>
                     ))
             }

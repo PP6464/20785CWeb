@@ -45,7 +45,7 @@ function Home() {
         <div id="home-container">
             {
                 selectedFeed === null ?
-                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%"}}>
+                    <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%", padding: "0 10px"}}>
                         <h1 style={{textAlign: "center"}}>Home</h1>
                         <div style={{display: "flex"}}>
                             <Chip label="Text"
