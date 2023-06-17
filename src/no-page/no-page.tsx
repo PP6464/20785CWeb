@@ -11,6 +11,9 @@ function NoPage() {
                     <Link to="/">Home</Link>
                 </li>
                 <li>
+                    <Link to="/awards">Awards</Link>
+                </li>
+                <li>
                     <Link to="/competitions">Competitions</Link>
                 </li>
                 <li>
