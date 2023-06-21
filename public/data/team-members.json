@@ -2,7 +2,7 @@
     {
         "name": "Panth Patel",
         "role": "Programmer",
-        "desc": "Made the team website, app and codes the robot",
+        "desc": "Made the team website and app and codes the robot",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
@@ -14,37 +14,37 @@
     {
         "name": "Zuheb Islam",
         "role": "Designer",
-        "desc": "Cool man",
+        "desc": "Lead designer of the robot",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Divit Kothari",
         "role": "Designer & Programmer",
-        "desc": "Designs logos etc. as well as helping with code",
+        "desc": "Designs logos etc. as well as helping with coding",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Aadish Praveen",
         "role": "Designer",
-        "desc": "Just your normal designer",
+        "desc": "A supporting designer in the design team",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Neev",
         "role": "Designer",
-        "desc": "A good designer",
+        "desc": "Another supporting designer in the design team",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Aadi Poreddy",
         "role": "Designer",
-        "desc": "Another casual designer",
+        "desc": "Another support designer in the design team",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Samarth Deshpande",
         "role": "Designer",
-        "desc": "Another normal designer",
+        "desc": "Another designer in the design team",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     }
 ]
