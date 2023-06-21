@@ -100,7 +100,8 @@ function Navbar() {
                             </div> :
                             <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
                     </a>
-                    {loading ? <Loading inAppBar={true} size="5vh" color="white" /> : sponsors.length === 0 ? <div style={{
+                    {loading ? <Loading inAppBar={true} size="5vh" color="white"/> : sponsors.length === 0 ?
+                        <div style={{
                             color: "white",
                             display: "flex",
                             alignItems: "center",
@@ -161,24 +162,34 @@ function Navbar() {
                     <ul id="navbar-ul">
                         <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv}/>
                         <NavbarOption path="/awards" selected={index === 1} title="Awards" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app"
+                                      onClick={hideSmallDiv}/>
                     </ul>
                     <div id="small-navbar" style={{display: showDropDown ? "flex" : "none"}}>
                         <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv}/>
                         <NavbarOption path="/awards" selected={index === 1} title="Awards" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv}/>
-                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv}/>
+                        <NavbarOption path="/competitions" selected={index === 2} title="Competitions"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/contact-us" selected={index === 4} title="Contact us"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us"
+                                      onClick={hideSmallDiv}/>
+                        <NavbarOption path="/download-app" selected={index === 6} title="20785C app"
+                                      onClick={hideSmallDiv}/>
                     </div>
                 </div>
             </nav>
-            <Outlet />
+            <Outlet/>
         </header>
     )
 }
