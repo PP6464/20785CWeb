@@ -27,7 +27,7 @@ function SponsorUs() {
             <h1 style={{textDecoration: "underline"}}>Sponsor Us:</h1>
             {
                 loading ? <Loading inAppBar={false} size="16vw" color="black" /> : sponsors.length === 0 ?
-                    <h3>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                    <h3 style={{textAlign: "center"}}>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
                         <h1 style={{textAlign: "center"}}>Our sponsors so far:</h1>
                         {
                             sponsors.map((sponsor: any, index: number) => (
