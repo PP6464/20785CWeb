@@ -59,6 +59,10 @@ nav {
     height: 10vh;
 }
 
+#no-sponsors-text {
+    padding-right: 7px;
+}
+
 @keyframes rotate {
     0%, 100% {
         rotate: 0deg;

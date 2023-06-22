@@ -48,6 +48,15 @@ function Navbar() {
         }
     }
 
+    // Decide whether or not to use Marquee or h1 for no sponsors text: true is for Marquee, false is for h1
+    function marqueeOrH1ForNoSponsorsText() {
+        try {
+            return document.getElementById("no-sponsors-text")!.clientWidth < 650
+        } catch {
+            return true
+        }
+    }
+
     // Convert route to index
     function indexForRoute(route: string): number | null {
         switch (route) {
@@ -108,7 +117,21 @@ function Navbar() {
                             justifyContent: "center",
                             width: "100%"
                         }}>
-                            <h1>No sponsors yet. Sponsor us and get your brand on our robot!</h1>
+                            {
+                                marqueeOrH1ForNoSponsorsText() ?
+                                    <Marquee style={{
+                                        width: "50%",
+                                        position: "absolute",
+                                        left: `${document.getElementById("img-only-logo")?.clientWidth === null ? `${document.getElementById("img-only-logo")!.clientWidth}px` : "30%"}`,
+                                        zIndex: "0"
+                                    }}>
+                                        <h1 id="no-sponsors-text">No sponsors yet. Sponsor
+                                            us and get
+                                            your brand on our robot!</h1>
+                                    </Marquee> : <h1 id="no-sponsors-text">No sponsors yet. Sponsor
+                                        us and get
+                                        your brand on our robot!</h1>
+                            }
                         </div> :
                         <div id="sponsor-place" style={{fontSize: "9px"}}>
                             <h1>Sponsored by: </h1>
@@ -145,7 +168,14 @@ function Navbar() {
                             }
                         </div>}
                     <a href="https://www.qebarnet.co.uk" target="_blank" rel="noreferrer">
-                        <img src="/assets/qe-logo.png" alt="QE Barnet" style={{padding: "1rem", height: "15vh"}}/>
+                        <img src="/assets/qe-logo.png" alt="QE Barnet"
+                             style={{
+                                 padding: "1rem",
+                                 height: "15vh",
+                                 position: "absolute",
+                                 right: "0",
+                                 background: "black",
+                             }}/>
                     </a>
                 </div>
                 <div id="navbar-tab-container">
