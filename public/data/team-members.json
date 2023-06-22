@@ -13,8 +13,8 @@
     },
     {
         "name": "Zuheb Islam",
-        "role": "Designer",
-        "desc": "Lead designer of the robot",
+        "role": "Builder",
+        "desc": "Lead builder of the robot",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
@@ -30,9 +30,9 @@
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
-        "name": "Neev",
-        "role": "Designer",
-        "desc": "Another supporting designer in the design team",
+        "name": "Kevin Chow",
+        "role": "Programmer",
+        "desc": "Another supporting programmer in the programming team",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
