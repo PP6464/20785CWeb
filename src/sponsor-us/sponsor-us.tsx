@@ -26,8 +26,14 @@ function SponsorUs() {
         <div id="sponsor-us-container">
             <h1 style={{textDecoration: "underline"}}>Sponsor Us:</h1>
             {
-                loading ? <Loading inAppBar={false} size="16vw" color="black" /> : sponsors.length === 0 ?
-                    <h3 style={{textAlign: "center"}}>No sponsors yet. Become our first sponsor and get your brand on our robot!</h3> : <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
+                loading ? <Loading inAppBar={false} size="16vw" color="black"/> : sponsors.length === 0 ?
+                    <h3 style={{textAlign: "center"}}>No sponsors yet. Become our first sponsor and get your brand on
+                        our robot!</h3> : <div style={{
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        flexDirection: "column"
+                    }}>
                         <h1 style={{textAlign: "center"}}>Our sponsors so far:</h1>
                         {
                             sponsors.map((sponsor: any, index: number) => (
@@ -49,14 +55,14 @@ function SponsorUs() {
             <p style={{textAlign: "center"}}>Contact us at vexoverride@gmail.com</p>
             <form style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <input type="text" className="sponsor-us-input" value={companyName}
-                    onChange={(e) => setCompanyName(e.target.value)}
-                    placeholder="Enter company name" data-smaller="true" required/>
+                       onChange={(e) => setCompanyName(e.target.value)}
+                       placeholder="Enter company name" data-smaller="true" required/>
                 <input type="email" className="sponsor-us-input" value={companyEmail}
-                    onChange={(e) => setCompanyEmail(e.target.value)}
-                    placeholder="Enter company email (so we can email you back)" data-medium="true" required/>
+                       onChange={(e) => setCompanyEmail(e.target.value)}
+                       placeholder="Enter company email (so we can email you back)" data-medium="true" required/>
                 <textarea className="sponsor-us-input" value={companyDetails}
-                    onChange={(e) => setCompanyDetails(e.target.value)} placeholder="Your terms for sponsorship"
-                    data-larger="true" required/>
+                          onChange={(e) => setCompanyDetails(e.target.value)} placeholder="Your terms for sponsorship"
+                          data-larger="true" required/>
                 <div id="register-sponsorship" onClick={() => {
                     window.open(`mailto:vexoverride@gmail.com?body=Company%3A%20${encodeURIComponent(companyName)}%0d%0aTerms%20for%20sponsorship%3A%20${encodeURIComponent(companyDetails)}%0d%0aEmail%20to%20email%20back%20on%3A%20${encodeURIComponent(companyEmail)}&subject=Sponsorship%20interest`)
                 }}>
