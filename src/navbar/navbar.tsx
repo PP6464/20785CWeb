@@ -48,15 +48,6 @@ function Navbar() {
         }
     }
 
-    // Decide whether or not to use Marquee or h1 for no sponsors text: true is for Marquee, false is for h1
-    function marqueeOrH1ForNoSponsorsText() {
-        try {
-            return document.getElementById("no-sponsors-text")!.clientWidth < 650
-        } catch {
-            return true
-        }
-    }
-
     // Convert route to index
     function indexForRoute(route: string): number | null {
         switch (route) {
@@ -103,11 +94,7 @@ function Navbar() {
                         alignItems: "center",
                         textDecoration: "none"
                     }} href="/" target="_blank" rel="noreferrer">
-                        {width > 650 ?
-                            <div id="logo-large-container"><Loading inAppBar={true} size="5vh" color="white"/>
-                                <h1 style={{margin: "0px", padding: "0px", width: "fit-content"}}>Override</h1>
-                            </div> :
-                            <img src="/assets/logo-light.png" alt="GEAR" id="img-only-logo"/>}
+                        <img src="/assets/logo-inverted-colour.png" alt="GEAR" id="img-only-logo"/>
                     </a>
                     {loading ? <Loading inAppBar={true} size="5vh" color="white"/> : sponsors.length === 0 ?
                         <div style={{
@@ -117,21 +104,16 @@ function Navbar() {
                             justifyContent: "center",
                             width: "100%"
                         }}>
-                            {
-                                marqueeOrH1ForNoSponsorsText() ?
-                                    <Marquee style={{
-                                        width: "50%",
-                                        position: "absolute",
-                                        left: `${document.getElementById("img-only-logo")?.clientWidth === null ? `${document.getElementById("img-only-logo")!.clientWidth}px` : "30%"}`,
-                                        zIndex: "0"
-                                    }}>
-                                        <h1 id="no-sponsors-text">No sponsors yet. Sponsor
-                                            us and get
-                                            your brand on our robot!</h1>
-                                    </Marquee> : <h1 id="no-sponsors-text">No sponsors yet. Sponsor
-                                        us and get
-                                        your brand on our robot!</h1>
-                            }
+                            <Marquee style={{
+                                width: "75%",
+                                position: "absolute",
+                                left: `${document.getElementById("img-only-logo") !== null ? `${document.getElementById("img-only-logo")!.offsetWidth + width * 0.05}px` : "30%"}`,
+                                zIndex: "0"
+                            }}>
+                                <h1 id="no-sponsors-text">No sponsors yet. Sponsor
+                                    us and get
+                                    your brand on our robot!</h1>
+                            </Marquee>
                         </div> :
                         <div id="sponsor-place" style={{fontSize: "9px"}}>
                             <h1>Sponsored by: </h1>
