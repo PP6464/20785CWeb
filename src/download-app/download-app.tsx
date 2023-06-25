@@ -6,6 +6,7 @@ function DownloadApp() {
     const [appData, setAppData] = useState({
         "version": "1.0.0+1", // Version number
         "features": [], // List of features to display for app
+        "link": undefined,
     }) // App data
     const [loading, setLoading] = useState(false)
 
@@ -26,7 +27,7 @@ function DownloadApp() {
             {
                 !loading ? <div id="download-app-container">
                     <h1 style={{textDecoration: "underline", textAlign: "center"}}>Download the 20785C app:</h1>
-                    <h1 style={{marginBottom: "0"}}>Version: {appData.version}</h1>
+                    <h1 style={{marginBottom: "0", textAlign: "center"}}>Version: {appData.version}</h1>
                     <h1 style={{marginBottom: "0"}}>Features:</h1>
                     <ul style={{listStyle: "none", marginBottom: "0"}}>
                         {
@@ -38,9 +39,12 @@ function DownloadApp() {
                             ))
                         }
                     </ul>
-                    <div id="download-app-button" onClick={() => window.open(appData.link, "_blank", "noreferrer")}>
-                        <h1>Download Now!</h1>
-                    </div>
+                    {
+                        !(appData.link === null || appData.link === undefined) ? <div id="download-app-button"
+                                                                                      onClick={() => window.open(appData.link, "_blank", "noreferrer")}>
+                            <h1>Download Now!</h1>
+                        </div> : <p style={{textAlign: "center"}}>Download link coming soon</p>
+                    }
                 </div> : <Loading inAppBar={false} size="16vw" color="black"/>
             }
         </div>
