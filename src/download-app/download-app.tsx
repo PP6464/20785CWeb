@@ -6,7 +6,6 @@ function DownloadApp() {
     const [appData, setAppData] = useState({
         "version": "1.0.0+1", // Version number
         "features": [], // List of features to display for app
-        "link": "https://play.google.com/store/apps/details?id=com.chat.commenter", // Mock link, will be replaced by actual link for 20785C app
     }) // App data
     const [loading, setLoading] = useState(false)
 
