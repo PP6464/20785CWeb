@@ -18,12 +18,6 @@
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
-        "name": "Divit Kothari",
-        "role": "Designer & Programmer",
-        "desc": "Designs logos etc. as well as helping with coding",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-    },
-    {
         "name": "Aadish Praveen",
         "role": "Designer",
         "desc": "A supporting designer in the design team",
@@ -39,12 +33,6 @@
         "name": "Aadi Poreddy",
         "role": "Designer",
         "desc": "Another support designer in the design team",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-    },
-    {
-        "name": "Samarth Deshpande",
-        "role": "Designer",
-        "desc": "Another designer in the design team",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     }
 ]

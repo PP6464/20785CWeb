@@ -94,7 +94,7 @@ function Navbar() {
                         alignItems: "center",
                         textDecoration: "none"
                     }} href="/" target="_blank" rel="noreferrer">
-                        <img src="/assets/logo-inverted-colour.png" alt="GEAR" id="img-only-logo"/>
+                        <img src={width >= 1000 ? "/assets/logo-light-long.png" : "/assets/logo-light.png"} alt="GEAR" id="img-only-logo"/>
                     </a>
                     {loading ? <Loading inAppBar={true} size="5vh" color="white"/> : sponsors.length === 0 ?
                         <div style={{
