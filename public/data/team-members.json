@@ -2,37 +2,43 @@
     {
         "name": "Panth Patel",
         "role": "Programmer",
-        "desc": "Made the team website and app and codes the robot",
+        "desc": "Contributed to the team website, app, and coding of the robot.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Harik Sodhi",
         "role": "Programmer & Designer",
-        "desc": "Does a bit of everything",
+        "desc": "A versatile team member involved in a variety of tasks.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Zuheb Islam",
         "role": "Builder",
-        "desc": "Lead builder of the robot",
+        "desc": "Lead builder responsible for crafting the robot.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Aadish Praveen",
         "role": "Designer",
-        "desc": "A supporting designer in the design team",
+        "desc": "Contributes creatively as a supporting designer in the design team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Kevin Chow",
         "role": "Programmer",
-        "desc": "Another supporting programmer in the programming team",
+        "desc": "Offers valuable support as a programmer in the programming team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Aadi Poreddy",
         "role": "Designer",
-        "desc": "Another support designer in the design team",
+        "desc": "Provides additional creative support within the design team.",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+    },
+    {
+        "name": "Neev Sanyal",
+        "role": "Builder",
+        "desc": "Offers support as a builder within the design team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     }
 ]

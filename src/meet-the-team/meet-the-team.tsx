@@ -1,5 +1,5 @@
 import './meet-the-team.css'
-import {useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
 import Loading from '../loading/loading'
 
 function MeetTheTeam() {

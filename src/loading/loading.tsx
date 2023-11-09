@@ -1,4 +1,5 @@
 import './loading.css'
+import React from 'react'
 
 interface LoadingProps {
     size: string // size of animation

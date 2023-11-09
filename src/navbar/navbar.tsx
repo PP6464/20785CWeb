@@ -2,7 +2,7 @@ import {Outlet, useLocation} from "react-router-dom"
 import './navbar.css'
 import NavbarOption from "./option/navbar-option"
 import Loading from "../loading/loading"
-import {useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
 import Marquee from "react-fast-marquee"
 
 function Navbar() {

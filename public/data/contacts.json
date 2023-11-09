@@ -21,10 +21,6 @@
             "email": "18bislamz@qerdp.co.uk"
         },
         {
-            "name": "Divit Kothari",
-            "email": "18pkotharid@qerdp.co.uk"
-        },
-        {
             "name": "Aadish Praveen",
             "email": "18spraveena@qerdp.co.uk"
         },
@@ -37,8 +33,13 @@
             "email": "18pporeddya@qerdp.co.uk"
         },
         {
-            "name": "Samarth Deshpande",
-            "email": "18sdeshpandes@qerdp.co.uk"
+            "name": "Kevin Chow",
+            "email": "18pchowk@qerdp.co.uk"
+        },
+        {
+            "name": "Neev Sanyal",
+            "email": "18ssanyaln@qerdp.co.uk"
         }
+
     ]
 }

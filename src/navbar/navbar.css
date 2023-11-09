@@ -1,7 +1,6 @@
 nav {
     display: flex;
     flex-direction: column;
-    elevation: above;
     box-shadow: 0 10px 10px #BBBBBB;
     background: black;
     position: fixed;

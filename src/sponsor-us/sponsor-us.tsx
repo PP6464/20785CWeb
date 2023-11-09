@@ -1,5 +1,5 @@
 import './sponsor-us.css'
-import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Loading from '../loading/loading'
 
 function SponsorUs() {

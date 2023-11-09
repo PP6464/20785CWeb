@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './competitions.css'
 import Loading from "../loading/loading"
 import Chip from '@mui/material/Chip'
