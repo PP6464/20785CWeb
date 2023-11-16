@@ -2,7 +2,7 @@ nav {
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 10px #BBBBBB;
-    background: black;
+    background: #151515;
     position: fixed;
     top: 0;
     width: 100%;
@@ -37,13 +37,12 @@ nav {
 #top-bar {
     display: flex;
     height: 15vh;
-    background: black;
+    background: #151515;
 }
 
 #navbar-tab-container {
     display: flex;
     flex-direction: column;
-    padding-top: 15px;
 }
 
 .sponsor {
@@ -97,7 +96,7 @@ nav {
     #more-div {
         align-items: center;
         -webkit-align-items: center;
-        background: black;
+        background: rgb(0, 0, 0);
         color: white;
         font-weight: bold;
     }

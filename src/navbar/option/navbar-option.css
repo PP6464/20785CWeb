@@ -5,12 +5,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: black;
+    background: #1D1D1D;
+    transition: background 0.5s ease, color 0.3s ease;
 }
 
 .navbar-option[data-selected="true"] {
-    background: red;
-    color: white;
+    background: #00ffff;
+    color: rgb(0, 0, 0);
 }
 
 .navbar-option[data-selected="false"] {
@@ -19,7 +20,9 @@
 }
 
 .navbar-option:hover {
-    background: grey;
-    color: black;
+    background: #151515;
+    color: #00ffff;
     cursor: pointer;
+    border: 3px solid #ffffff; 
+    box-sizing: border-box; 
 }

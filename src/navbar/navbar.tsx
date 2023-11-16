@@ -154,7 +154,7 @@ function Navbar() {
                                  height: "15vh",
                                  position: "absolute",
                                  right: "0",
-                                 background: "black",
+                                 background: "#000000",
                              }}/>
                     </a>
                 </div>
