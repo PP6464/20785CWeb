@@ -10,13 +10,14 @@ import ContactUs from '../contact-us/contact-us';
 import SponsorUs from '../sponsor-us/sponsor-us';
 import Competitions from '../competitions/competitions';
 import Awards from '../awards/awards';
+import ScrollToTop from "./ScrollToTop.js";
 
 function App() {
     return (
         <BrowserRouter>
             {/* Navbar should be rendered outside of the Routes */}
             <Navbar />
-
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="awards" element={<Awards />} />

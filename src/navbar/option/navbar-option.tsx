@@ -1,5 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import './navbar-option.css'
+import React from 'react'
 
 interface NavbarOptionProps {
     title: string // Title of this option

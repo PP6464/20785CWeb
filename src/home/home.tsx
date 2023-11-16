@@ -20,7 +20,7 @@ function Home() {
     const [selectedFeed, setSelectedFeed] = useState<Feed | null>(null) // Selected feed
 
     function loadFeeds() {
-        setLoading(true) // Show loading animation
+        setLoading(false) // Loading set to false until we have an actual feed
         onSnapshot(collection(firestore, "home"), (snapshot) => {
             setFeeds(snapshot.docs
                 .filter((e) => category.includes(e.data().type)) // Filter for relevant type of feed

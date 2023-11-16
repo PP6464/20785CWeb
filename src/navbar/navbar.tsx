@@ -12,7 +12,7 @@ function Navbar() {
     const location = useLocation() // Use current page location
     const [loading, setLoading] = useState(false) // Show or hide loading animation
     function loadSponsors() {
-        setLoading(true) // Show loading animation
+        setLoading(false) // Set as false until we get actual sponsors
         fetch("/data/sponsors.json").then(sponsors => {
             sponsors.json().catch(_ => {
             }).then(data => {
@@ -93,7 +93,7 @@ function Navbar() {
                         display: "flex",
                         alignItems: "center",
                         textDecoration: "none"
-                    }} href="/" target="_blank" rel="noreferrer">
+                    }} href="/" rel="noreferrer">
                         <img src={width >= 1000 ? "/assets/logo-light-long.png" : "/assets/logo-light.png"} alt="GEAR" id="img-only-logo"/>
                     </a>
                     {loading ? <Loading inAppBar={true} size="5vh" color="white"/> : sponsors.length === 0 ?
@@ -110,9 +110,7 @@ function Navbar() {
                                 left: `${document.getElementById("img-only-logo") !== null ? `${document.getElementById("img-only-logo")!.offsetWidth + width * 0.05}px` : "30%"}`,
                                 zIndex: "0"
                             }}>
-                                <h1 id="no-sponsors-text">No sponsors yet. Sponsor
-                                    us and get
-                                    your brand on our robot!</h1>
+                                <h1 id="no-sponsors-text">No sponsors yet. Sponsor us and showcase your brand on both our website and our robot!</h1>
                             </Marquee>
                         </div> :
                         <div id="sponsor-place" style={{fontSize: "9px"}}>
