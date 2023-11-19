@@ -92,7 +92,6 @@ function Navbar() {
                         paddingRight: "2vw",
                         display: "flex",
                         alignItems: "center",
-                        textDecoration: "none"
                     }} href="/" rel="noreferrer">
                         <img src={width >= 1000 ? "/assets/logo-light-long.png" : "/assets/logo-light.png"} alt="GEAR" id="img-only-logo"/>
                     </a>

@@ -11,7 +11,7 @@
 
 .navbar-option[data-selected="true"] {
     background: #00ffff;
-    color: rgb(0, 0, 0);
+    color: black;
 }
 
 .navbar-option[data-selected="false"] {
@@ -20,7 +20,7 @@
 }
 
 .navbar-option:hover {
-    background: #151515;
+    background: #272727;
     color: #00ffff;
     cursor: pointer;
     border: 3px solid #ffffff; 
