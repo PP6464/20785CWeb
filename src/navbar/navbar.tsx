@@ -104,7 +104,7 @@ function Navbar() {
                             width: "100%"
                         }}>
                             <Marquee style={{
-                                width: "75%",
+                                width: "64%",
                                 position: "absolute",
                                 left: `${document.getElementById("img-only-logo") !== null ? `${document.getElementById("img-only-logo")!.offsetWidth + width * 0.05}px` : "30%"}`,
                                 zIndex: "0"
@@ -147,14 +147,16 @@ function Navbar() {
                             }
                         </div>}
                     <a href="https://www.qebarnet.co.uk" target="_blank" rel="noreferrer">
-                        <img src="/assets/qe-logo.png" alt="QE Barnet"
-                             style={{
-                                 padding: "1rem",
-                                 height: "15vh",
-                                 position: "absolute",
-                                 right: "0",
-                                 background: "#000000",
-                             }}/>
+                    <img
+                        src="/assets/qe.png"
+                        alt="QE Barnet"
+                        style={{
+                            padding: "10px",
+                            height: "15vh",
+                            position: "absolute",
+                            right: "2vw"
+                        }}
+                    />
                     </a>
                 </div>
                 <div id="navbar-tab-container">

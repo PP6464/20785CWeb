@@ -18,7 +18,7 @@ function Home() {
     const [category, setCategory] = useState<string[]>(["text", "video"]) // Text or video feeds or both
     const [loading, setLoading] = useState(false) // Show or hide loading animation
     const [selectedFeed, setSelectedFeed] = useState<Feed | null>(null) // Selected feed
-
+    
     function loadFeeds() {
         setLoading(false) // Loading set to false until we have an actual feed
         onSnapshot(collection(firestore, "home"), (snapshot) => {
@@ -46,7 +46,7 @@ function Home() {
             {
                 selectedFeed === null ?
                     <div style={{display: "flex", flexDirection: "column", alignItems: "center", width: "100%", padding: "0 10px"}}>
-                        <h1 style={{textAlign: "center"}}>Home</h1>
+                        <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Home</h1>
                         <div style={{display: "flex"}}>
                             <Chip label="Text"
                                   onClick={() => setCategory(category.includes("text") ? category.filter((e) => e !== "text") : category.concat("text"))}

@@ -31,7 +31,7 @@ function ContactUs() {
 
   return (
     <div id="contact-us-container">
-      <h1 style={{ textDecoration: 'underline', fontWeight: 'bold', marginBottom: '0' }}>Contact Us:</h1>
+      <h1 style={{textDecoration: 'underline', fontSize: '40px', marginBottom: '0' }}>Contact Us:</h1>
       {(loading || !animationCompleted) && (
         <Loading size="16vw" color="black" inAppBar={false} />
       )}

@@ -26,7 +26,7 @@ useEffect(loadMembers, []) // run on page lauch once
 
     return (
         <div id="meet-the-team-container">
-            <h1 style={{textDecoration: "underline"}}>Meet the Team:</h1>
+            <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Meet the Team:</h1>
             <div style={{width: "100%"}}>
                 {
                     (loading || showLoadingAnimation) ? <Loading size="16vw" color="black" inAppBar={false} /> : members.map((member: any, index: number) => (

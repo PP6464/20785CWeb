@@ -32,7 +32,7 @@ function SponsorUs() {
 
   return (
     <div id="sponsor-us-container">
-      <h1 style={{ textDecoration: 'underline' }}>Sponsor Us:</h1>
+      <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Sponsor Us:</h1>
       {showLoadingAnimation && loading ? (
         <Loading inAppBar={false} size="16vw" color="black" />
       ) : (

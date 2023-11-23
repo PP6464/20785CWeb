@@ -25,8 +25,8 @@ function Competitions() {
     const [seasons, setSeasons] = useState(["181"]) // Season ID
     const [loading, setLoading] = useState(false) // Controls whether to display loading animation
     const [selectedCompetition, setSelectedCompetition] = useState<Competition | null>(null) // Selected competition
-
-    function loadCompetitions() {
+    
+        function loadCompetitions() {
         setLoading(true) // Show loading animation
         fetch(`https://www.robotevents.com/api/v2/teams/93408/events?${seasons.map((e) => "season%5B%5D=" + e).join("&")}`, {
             headers: {
@@ -59,10 +59,11 @@ function Competitions() {
     useEffect(loadCompetitions, [seasons])
 
     return (
+        
         <div>
             {
                 selectedCompetition === null ? <div id="competitions-container">
-                    <h1>Competitions</h1>
+                    <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Competitions</h1>
                     <div style={{display: "flex", zIndex: "0"}} id="competitions-seasons-chips">
                         <Chip label="2023-24" onClick={() => {
                             !seasons.includes("181") ? setSeasons(seasons.concat("181")) : setSeasons(seasons.filter((e) => e !== "181"))

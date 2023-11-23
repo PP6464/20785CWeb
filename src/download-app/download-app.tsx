@@ -27,7 +27,7 @@ useEffect(loadAppData, []) // run on page launch once
 
   return (
     <div id="download-app-container">
-      <h1 style={{ textDecoration: 'underline', textAlign: 'center' }}>Download the 20785C app:</h1>
+      <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Download the 20785C app:</h1>
       {loading ? (
         <Loading inAppBar={false} size="16vw" color="black" />
       ) : (

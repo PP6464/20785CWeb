@@ -94,7 +94,7 @@ function Awards() {
 
     return (
         <div id="awards-container">
-            <h1>Awards</h1>
+            <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Awards</h1>
             <div style={{display: "flex", zIndex: "0"}} id="awards-seasons-chips">
                 {Object.entries(SEASONS).map(([id, name]) => (
                     <React.Fragment key={id}>
