@@ -1,12 +1,12 @@
 #list-of-links {
-    list-style: none;
+  list-style: none;
 }
 
 #no-page-container {
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    max-width: 50%;
-    min-width: 500px;
-    translate: -50% 50%;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  max-width: 50%;
+  min-width: 500px;
+  translate: -50% 50%;
 }

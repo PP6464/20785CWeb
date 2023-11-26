@@ -1,61 +1,61 @@
 #sponsor-us-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 50px 30px;
 }
 
 .sponsor-us-input {
-    font-size: 15px;
-    padding: 10px;
-    margin: 5px;
+  font-size: 15px;
+  padding: 10px;
+  margin: 5px;
 }
 
 .sponsor-us-input[data-smaller] {
-    width: 300px;
-    max-width: 90vw;
+  width: 300px;
+  max-width: 90vw;
 }
 
 .sponsor-us-input[data-medium] {
-    width: 450px;
-    max-width: 90vw;
+  width: 450px;
+  max-width: 90vw;
 }
 
 .sponsor-us-input[data-larger] {
-    width: 600px;
-    height: 300px;
-    max-width: 90vw;
-    resize: none;
+  width: 600px;
+  height: 300px;
+  max-width: 90vw;
+  resize: none;
 }
 
 #register-sponsorship {
-    color: white;
-    background: black;
-    border-radius: 40px;
-    padding: 0 40px;
-    margin-top: 15px;
-    max-width: 90vw;
-    text-align: center;
+  color: white;
+  background: black;
+  border-radius: 40px;
+  padding: 0 40px;
+  margin-top: 15px;
+  max-width: 90vw;
+  text-align: center;
 }
 
 @media only screen and (max-width: 560px) {
-    #register-sponsorship {
-        font-size: 10px;
-    }
+  #register-sponsorship {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (min-width: 560px) {
-    #register-sponsorship {
-        font-size: 15px;
-    }
+  #register-sponsorship {
+    font-size: 15px;
+  }
 }
 
 #register-sponsorship:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .sponsor-us-sponsor {
-    max-width: 90vw;
-    width: 400px;
+  max-width: 90vw;
+  width: 400px;
 }

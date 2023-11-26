@@ -1,45 +1,45 @@
 #download-app-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 0 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0 50px 30px;
 }
 
 .app-feature div::after {
-    content: '\002B9A';
-    padding-right: 10px;
-    font-weight: bold;
-    font-size: 25px;
+  content: "\002B9A";
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 25px;
 }
 
 .app-feature {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #download-app-button {
-    color: white;
-    background: black;
-    border-radius: 40px;
-    padding: 0 40px;
-    margin-top: 25px;
+  color: white;
+  background: black;
+  border-radius: 40px;
+  padding: 0 40px;
+  margin-top: 25px;
 }
 
 #download-app-button:hover {
-    cursor: pointer;
-    background: grey;
-    color: black;
+  cursor: pointer;
+  background: grey;
+  color: black;
 }
 
 @media only screen and (max-width: 560px) {
-    #download-app-button {
-        font-size: 10px;
-    }
+  #download-app-button {
+    font-size: 10px;
+  }
 }
 
 @media only screen and (min-width: 560px) {
-    #download-app-button {
-        font-size: 15px;
-    }
+  #download-app-button {
+    font-size: 15px;
+  }
 }

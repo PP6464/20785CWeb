@@ -1,44 +1,44 @@
 #loading-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 #loading-container h1 {
-    font-weight: bold;
-    animation: fade-out-in 2s infinite;
-    margin: 0;
+  font-weight: bold;
+  animation: fade-out-in 2s infinite;
+  margin: 0;
 }
 
 #loading-container img {
-    height: 100%;
-    animation: roll 2s infinite;
+  height: 100%;
+  animation: roll 2s infinite;
 }
 
 @keyframes roll {
-    0% {
-        rotate: 0deg;
-        translate: 0 0;
-    }
-    50% {
-        rotate: 180deg;
-        translate: 150% 0;
-    }
-    100% {
-        rotate: 0deg;
-        translate: 0 0;
-    }
+  0% {
+    rotate: 0deg;
+    translate: 0 0;
+  }
+  50% {
+    rotate: 180deg;
+    translate: 150% 0;
+  }
+  100% {
+    rotate: 0deg;
+    translate: 0 0;
+  }
 }
 
 @keyframes fade-out-in {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

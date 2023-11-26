@@ -1,53 +1,68 @@
-import './meet-the-team.css'
-import React, {useEffect, useState} from "react"
-import Loading from '../loading/loading'
+import "./meet-the-team.css";
+import React, { useEffect, useState } from "react";
+import Loading from "../loading/loading";
 
 function MeetTheTeam() {
-    const [members, setMembers] = useState([]) // List of team members
-    const [loading, setLoading] = useState(true) // Show loading animation or not
+  const [members, setMembers] = useState([]); // List of team members
+  const [loading, setLoading] = useState(true); // Show loading animation or not
 
-    function loadMembers() {
-        setLoading(true) // Show loading animation
-        fetch("/data/team-members.json")
-            .then((members) => {
-                members.json().catch((_error) => {}).then((data: any) => {
-                    setMembers(data)
-                    // Keep loading animation always visible for 1 loop
-                    setTimeout(() => {
-                        setLoading(false)
-                    }, 750) // Set the duration for the loading animation
-                })
-            }) // Load team members data
-    }
+  function loadMembers() {
+    setLoading(true); // Show loading animation
+    fetch("/data/team-members.json").then((members) => {
+      members
+        .json()
+        .catch((_error) => {})
+        .then((data: any) => {
+          setMembers(data);
+          // Keep loading animation always visible for 1 loop
+          setTimeout(() => {
+            setLoading(false);
+          }, 750); // Set the duration for the loading animation
+        });
+    }); // Load team members data
+  }
 
-    useEffect(loadMembers, []) // run on page lauch once
+  useEffect(loadMembers, []); // run on page lauch once
 
-    return (
-        <div id="meet-the-team-container">
-            <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Meet the Team:</h1>
-            {loading ? (
-                <Loading inAppBar={false} size="16vw" color="black" />
-            ) : (
-                <div style={{width: "100%"}}>
-                    {
-                        members.map((member: any, index: number) => (
-                            <div key={index} className="member-outer-div"
-                                data-on-left={(index % 2 === 0).toString()}>
-                                <div className="member-inner-div" data-on-left={(index % 2 === 0).toString()}>
-                                    <img alt={member.name} src={member.photo} style={{borderRadius: "30%", height: "100px"}}/>
-                                    <div className="member-info" data-on-left={(index % 2 === 0).toString()}>
-                                        <h1>{member.name}</h1>
-                                        <h3>{member.role}</h3>
-                                        <p>{member.desc}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
+  return (
+    <div id="meet-the-team-container">
+      <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>
+        Meet the Team:
+      </h1>
+      {loading ? (
+        <Loading inAppBar={false} size="16vw" color="black" />
+      ) : (
+        <div style={{ width: "100%" }}>
+          {members.map((member: any, index: number) => (
+            <div
+              key={index}
+              className="member-outer-div"
+              data-on-left={(index % 2 === 0).toString()}
+            >
+              <div
+                className="member-inner-div"
+                data-on-left={(index % 2 === 0).toString()}
+              >
+                <img
+                  alt={member.name}
+                  src={member.photo}
+                  style={{ borderRadius: "30%", height: "100px" }}
+                />
+                <div
+                  className="member-info"
+                  data-on-left={(index % 2 === 0).toString()}
+                >
+                  <h1>{member.name}</h1>
+                  <h3>{member.role}</h3>
+                  <p>{member.desc}</p>
                 </div>
-            )}
+              </div>
+            </div>
+          ))}
         </div>
-    )
+      )}
+    </div>
+  );
 }
 
-export default MeetTheTeam
+export default MeetTheTeam;

@@ -1,43 +1,43 @@
 #competitions-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0 50px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 50px 30px;
 }
 
 .competition-outer {
-    box-shadow: 0 0 5px #CCCCCC;
-    border-radius: 30px;
-    width: 100%;
-    margin: 5px 20px 5px 20px;
-    padding: 0 20px;
+  box-shadow: 0 0 5px #cccccc;
+  border-radius: 30px;
+  width: 100%;
+  margin: 5px 20px 5px 20px;
+  padding: 0 20px;
 }
 
 .empty {
-    margin: 0;
-    padding: 0;
-    width: 0;
-    height: 0;
-    background: green;
+  margin: 0;
+  padding: 0;
+  width: 0;
+  height: 0;
+  background: green;
 }
 
 @media only screen and (max-width: 560px) {
-    #competitions-seasons-chips {
-        flex-direction: column;
-    }
+  #competitions-seasons-chips {
+    flex-direction: column;
+  }
 
-    .competitions-chip-padding {
-        padding: 5px 25px;
-    }
+  .competitions-chip-padding {
+    padding: 5px 25px;
+  }
 }
 
 @media only screen and (min-width: 560px) {
-    #competitions-seasons-chips {
-        flex-direction: row;
-    }
+  #competitions-seasons-chips {
+    flex-direction: row;
+  }
 
-    .competitions-chip-padding {
-        padding: 25px 5px;
-    }
+  .competitions-chip-padding {
+    padding: 25px 5px;
+  }
 }
