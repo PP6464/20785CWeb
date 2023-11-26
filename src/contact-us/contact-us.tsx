@@ -6,36 +6,30 @@ function ContactUs() {
   const [teamContacts, setTeamContacts] = useState([]) // Team contact details
   const [individualContacts, setIndividualContacts] = useState([]) // Contact details for each team member individually
   const [loading, setLoading] = useState(false) // Show or hide loading animation
-  const [animationCompleted, setAnimationCompleted] = useState(false); // Track if the loading animation has completed its initial loop
 
   function loadContactInfo() {
-    setLoading(true); // Show loading animation
+    setLoading(true) // Show loading animation
     fetch('/data/contacts.json')
       .then((contacts) => {
-        contacts
-          .json()
-          .catch((_error) => {})
-          .then((data: any) => {
-            setTeamContacts(data['team']);
-            setIndividualContacts(data['individual']);
-            // Delay setting loading to false to ensure animation has run at least once
+        contacts.json().catch((_error) => {}).then((data: any) => {
+            setTeamContacts(data['team'])
+            setIndividualContacts(data['individual'])
+            // Keep loading animation always visible for 1 loop
             setTimeout(() => {
-              setLoading(false);
-              setAnimationCompleted(true);
-            }, 1000);
-          });
-      }); // Loads contact details from /data/contacts.json url (corresponds to public/data/contacts.json)
+              setLoading(false)
+            }, 750) // Set the duration for the loading animation
+          })
+      }) // Load contact details
   }
 
   useEffect(loadContactInfo, []); // run on page launch once
 
   return (
     <div id="contact-us-container">
-      <h1 style={{textDecoration: 'underline', fontSize: '40px', marginBottom: '0' }}>Contact Us:</h1>
-      {(loading || !animationCompleted) && (
-        <Loading size="16vw" color="black" inAppBar={false} />
-      )}
-      {!loading && animationCompleted && (
+      <h1 style={{textDecoration: 'underline', fontSize: '40px'}}>Contact Us:</h1>
+      {loading ? (
+        <Loading inAppBar={false} size="16vw" color="black" />
+      ) : (
         <>
           <h3 style={{ fontSize: '30px' }}>Team</h3>
           {teamContacts.map((contact: any, index: number) => (

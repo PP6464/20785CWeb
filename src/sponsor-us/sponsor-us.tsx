@@ -8,24 +8,19 @@ function SponsorUs() {
   const [companyEmail, setCompanyEmail] = useState("") // Company email to be emailed back on
   const [companyDetails, setCompanyDetails] = useState("") // Company terms for sponsorship
   const [loading, setLoading] = useState(false) // Display loading animation
-  const [showLoadingAnimation, setShowLoadingAnimation] = useState(true);
 
   function loadSponsors() {
-    setLoading(true); // Show loading animation
+    setLoading(true) // Show loading animation
     fetch('/data/sponsors.json')
       .then((sponsors) => {
-        sponsors
-          .json()
-          .catch((_error) => {})
-          .then((data) => {
-            setSponsors(data);
+        sponsors.json().catch((_error) => {}).then((data: any) => {
+            setSponsors(data)
             // Keep loading animation always visible for 1 loop
             setTimeout(() => {
-              setLoading(false);
-              setShowLoadingAnimation(false);
-            }, 500); // Set the duration for the loading animation
-          });
-      }); // Load current sponsors data
+              setLoading(false)
+            }, 750) // Set the duration for the loading animation
+          })
+      }) // Load sponsors data
   }
 
   useEffect(loadSponsors, []) // run on page lauch once
@@ -33,13 +28,13 @@ function SponsorUs() {
   return (
     <div id="sponsor-us-container">
       <h1 style={{textDecoration: 'underline',fontSize: '40px'}}>Sponsor Us:</h1>
-      {showLoadingAnimation && loading ? (
+      {loading ? (
         <Loading inAppBar={false} size="16vw" color="black" />
       ) : (
         <React.Fragment>
           {sponsors.length === 0 ? (
             <h3 style={{ textAlign: 'center' }}>
-              No sponsors yet. Become our first sponsor and get your brand on our robot!
+              No sponsors yet. Sponsor us and showcase your brand on both our website and our robot!
             </h3>
           ) : (
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>

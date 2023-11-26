@@ -11,19 +11,20 @@ function DownloadApp() {
   const [loading, setLoading] = useState(false)
 
   function loadAppData() {
-    setLoading(true); // Show loading animation
+    setLoading(true) // Show loading animation
     fetch('/data/20785C-app.json')
       .then((app) => {
         app.json().catch((_error) => {}).then((data: any) => {
-          setAppData(data);
+          setAppData(data)
           // Keep loading animation always visible for 1 loop
           setTimeout(() => {
-            setLoading(false);
-          }, 500); // Set the duration for the loading animation
-        });
-      });
-  } // Load app data from /data/20785C-app.json url (corresponds to /public/data/20785C-app.json)
-useEffect(loadAppData, []) // run on page launch once
+            setLoading(false)
+          }, 750) // Set the duration for the loading animation
+        })
+      })
+  } // Load app data
+
+  useEffect(loadAppData, []) // run on page launch once
 
   return (
     <div id="download-app-container">
