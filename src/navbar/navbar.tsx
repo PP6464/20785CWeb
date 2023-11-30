@@ -44,10 +44,7 @@ function Navbar() {
   // Show rolling marquee of sponsors or static div if sponsors width not large enough to require rolling
   function decideMarqueeShouldPlay() {
     try {
-      return (
-        document.getElementById("sponsor-place")!.clientWidth <
-        (document.documentElement.clientHeight * 0.05 + 10) * sponsors.length
-      );
+      return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.05 + 10) * sponsors.length;
     } catch {
       return true;
     }
@@ -102,15 +99,7 @@ function Navbar() {
             href="/"
             rel="noreferrer"
           >
-            <img
-              src={
-                width >= 1000
-                  ? "/assets/logo-light-long.png"
-                  : "/assets/logo-light.png"
-              }
-              alt="GEAR"
-              id="img-only-logo"
-            />
+            <img src={width >= 1000 ? "/assets/logo-light-long.png" : "/assets/logo-light.png"} alt="GEAR" id="img-only-logo" />
           </a>
           {loading ? (
             <Loading inAppBar={true} size="5vh" color="white" />
@@ -128,22 +117,11 @@ function Navbar() {
                 style={{
                   width: "64%",
                   position: "absolute",
-                  left: `${
-                    document.getElementById("img-only-logo") !== null
-                      ? `${
-                          document.getElementById("img-only-logo")!
-                            .offsetWidth +
-                          width * 0.05
-                        }px`
-                      : "30%"
-                  }`,
+                  left: `${document.getElementById("img-only-logo") !== null ? `${document.getElementById("img-only-logo")!.offsetWidth + width * 0.05}px` : "30%"}`,
                   zIndex: "0",
                 }}
               >
-                <h1 id="no-sponsors-text">
-                  No sponsors yet. Sponsor us and showcase your brand on both
-                  our website and our robot!
-                </h1>
+                <h1 id="no-sponsors-text">No sponsors yet. Sponsor us and showcase your brand on both our website and our robot!</h1>
               </Marquee>
             </div>
           ) : (
@@ -165,11 +143,7 @@ function Navbar() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img
-                        src={sponsor.photo}
-                        style={{ height: "5vh", borderRadius: "50%" }}
-                        alt={sponsor.name}
-                      />
+                      <img src={sponsor.photo} style={{ height: "5vh", borderRadius: "50%" }} alt={sponsor.name} />
                     </a>
                   ))}
                 </Marquee>
@@ -189,11 +163,7 @@ function Navbar() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      <img
-                        src={sponsor.photo}
-                        style={{ height: "5vh", borderRadius: "50%" }}
-                        alt={sponsor.name}
-                      />
+                      <img src={sponsor.photo} style={{ height: "5vh", borderRadius: "50%" }} alt={sponsor.name} />
                     </a>
                   ))}
                 </div>
@@ -228,95 +198,22 @@ function Navbar() {
             </div>
           </div>
           <ul id="navbar-ul">
-            <NavbarOption
-              path="/"
-              selected={index === 0}
-              title="Home"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/awards"
-              selected={index === 1}
-              title="Awards"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/competitions"
-              selected={index === 2}
-              title="Competitions"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/meet-the-team"
-              selected={index === 3}
-              title="Meet the team"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/contact-us"
-              selected={index === 4}
-              title="Contact us"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/sponsor-us"
-              selected={index === 5}
-              title="Sponsor us"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/download-app"
-              selected={index === 6}
-              title="20785C app"
-              onClick={hideSmallDiv}
-            />
+            <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv} />
+            <NavbarOption path="/awards" selected={index === 1} title="Awards" onClick={hideSmallDiv} />
+            <NavbarOption path="/competitions" selected={index === 2} title="Competitions" onClick={hideSmallDiv} />
+            <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv} />
+            <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv} />
+            <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv} />
+            <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv} />
           </ul>
-          <div
-            id="small-navbar"
-            style={{ display: showDropDown ? "flex" : "none" }}
-          >
-            <NavbarOption
-              path="/"
-              selected={index === 0}
-              title="Home"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/awards"
-              selected={index === 1}
-              title="Awards"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/competitions"
-              selected={index === 2}
-              title="Competitions"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/meet-the-team"
-              selected={index === 3}
-              title="Meet the team"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/contact-us"
-              selected={index === 4}
-              title="Contact us"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/sponsor-us"
-              selected={index === 5}
-              title="Sponsor us"
-              onClick={hideSmallDiv}
-            />
-            <NavbarOption
-              path="/download-app"
-              selected={index === 6}
-              title="20785C app"
-              onClick={hideSmallDiv}
-            />
+          <div id="small-navbar" style={{ display: showDropDown ? "flex" : "none" }}>
+            <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv} />
+            <NavbarOption path="/awards" selected={index === 1} title="Awards" onClick={hideSmallDiv} />
+            <NavbarOption path="/competitions" selected={index === 2} title="Competitions" onClick={hideSmallDiv} />
+            <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv} />
+            <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv} />
+            <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv} />
+            <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv} />
           </div>
         </div>
       </nav>
