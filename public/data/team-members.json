@@ -1,44 +1,44 @@
 [
     {
-        "name": "Panth Patel",
-        "role": "Programmer",
-        "desc": "Contributed to the team website, app, and coding of the robot.",
+        "name": "Zuheb Islam",
+        "role": "Builder & Designer",
+        "desc": "Lead builder and designer responsible for creating the robot.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Harik Sodhi",
         "role": "Programmer & Designer",
-        "desc": "A versatile team member involved in a variety of tasks.",
-        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-    },
-    {
-        "name": "Zuheb Islam",
-        "role": "Builder",
-        "desc": "Lead builder responsible for crafting the robot.",
+        "desc": "A versatile team leader involved in a variety of tasks.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Aadish Praveen",
-        "role": "Designer",
-        "desc": "Contributes creatively as a supporting designer in the design team.",
+        "role": "Builder",
+        "desc": "Offers support as a builder within the build team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Kevin Chow",
         "role": "Programmer",
-        "desc": "Offers valuable support as a programmer in the programming team.",
+        "desc": "Excellent programmer in the programming team.",
+        "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+    },
+    {
+        "name": "Panth Patel",
+        "role": "Programmer",
+        "desc": "Additional programmer in the programming team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Aadi Poreddy",
-        "role": "Designer",
-        "desc": "Provides additional creative support within the design team.",
+        "role": "Builder",
+        "desc": "Provides additional creative support within the build team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
     {
         "name": "Neev Sanyal",
         "role": "Builder",
-        "desc": "Offers support as a builder within the design team.",
+        "desc": "Offers support as a builder within the build team.",
         "photo": "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     }
 ]
