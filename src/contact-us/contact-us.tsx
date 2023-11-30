@@ -20,7 +20,7 @@ function ContactUs() {
           // Keep loading animation always visible for 1 loop
           setTimeout(() => {
             setLoading(false);
-          }, 750); // Set the duration for the loading animation
+          }, 1000); // Set the duration for the loading animation
         });
     }); // Load contact details
   }
