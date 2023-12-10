@@ -17,6 +17,7 @@
     "@types/react-modal": "^3.16.0",
     "@typescript-eslint/eslint-plugin": "^5.59.9",
     "@typescript-eslint/parser": "^5.59.9",
+    "axios": "^1.6.2",
     "eslint": "^8.42.0",
     "firebase": "^9.22.1",
     "fs": "^0.0.1-security",

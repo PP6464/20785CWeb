@@ -2,6 +2,7 @@ import "./awards.css";
 import React, { useEffect, useState } from "react";
 import Loading from "../loading/loading";
 import Chip from "@mui/material/Chip";
+import { IoIosCheckmarkCircle } from "react-icons/io";
 
 type Award = {
   title: string; // Type of award
@@ -27,39 +28,25 @@ function useFetchAwards(seasons: string[]) {
   useEffect(() => {
     setLoading(true);
     const fetches = seasons.map(async (season) => {
-      const response = await fetch(
-        `https://www.robotevents.com/api/v2/teams/93408/awards?season%5B%5D=${season}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const response = await fetch(`https://www.robotevents.com/api/v2/teams/93408/awards?season%5B%5D=${season}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       const data: any[] = (await response.json()).data;
       const awardsLoaded = await Promise.all(
         data.map(async (awardData) => {
-          const eventResponse = await fetch(
-            `https://www.robotevents.com/api/v2/events/${awardData.event.id}`,
-            {
-              headers: {
-                Authorization: `Bearer ${token}`,
-              },
-            }
-          );
+          const eventResponse = await fetch(`https://www.robotevents.com/api/v2/events/${awardData.event.id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          });
 
           const eventData = await eventResponse.json();
 
           const eventDateString =
             eventData.start !== eventData.end
-              ? `${eventData.start
-                  .split("T")[0]
-                  .split("-")
-                  .reverse()
-                  .join("/")} to ${eventData.end
-                  .split("T")[0]
-                  .split("-")
-                  .reverse()
-                  .join("/")}`
+              ? `${eventData.start.split("T")[0].split("-").reverse().join("/")} to ${eventData.end.split("T")[0].split("-").reverse().join("/")}`
               : eventData.start.split("T")[0].split("-").reverse().join("/");
 
           const seasonName = getSeasonName(eventData.season.id);
@@ -105,11 +92,10 @@ function Awards() {
             <Chip
               label={name}
               onClick={() => {
-                !seasons.includes(id)
-                  ? setSeasons(seasons.concat(id))
-                  : setSeasons(seasons.filter((e) => e !== id));
+                !seasons.includes(id) ? setSeasons(seasons.concat(id)) : setSeasons(seasons.filter((e) => e !== id));
               }}
               variant={seasons.includes(id) ? "filled" : "outlined"}
+              icon={seasons.includes(id) ? <IoIosCheckmarkCircle /> : undefined}
             />
             <div className="awards-chip-padding"></div>
           </React.Fragment>
@@ -120,9 +106,7 @@ function Awards() {
           <Loading color="black" size="16vw" inAppBar={false} />
         </div>
       ) : awards.length === 0 ? (
-        <p style={{ fontSize: "20px", textAlign: "center" }}>
-          No awards for the selected seasons
-        </p>
+        <p style={{ fontSize: "20px", textAlign: "center" }}>No awards for the selected seasons</p>
       ) : (
         awards.map((award: Award, index: number) => (
           <div key={index} className="award-outer">
