@@ -29,29 +29,21 @@ function ContactUs() {
 
   return (
     <div id="contact-us-container">
-      <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>
-        Contact Us:
-      </h1>
+      <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>Contact Us:</h1>
       {loading ? (
         <Loading inAppBar={false} size="16vw" color="black" />
       ) : (
         <>
-          <h3 style={{ fontSize: "30px" }}>Team</h3>
+          <h3 style={{ fontSize: "30px" }}>Team (For team inquiries)</h3>
           {teamContacts.map((contact: any, index: number) => (
-            <a
-              className="team-contact-link"
-              key={index}
-              href={contact.redirect}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a className="team-contact-link" key={index} href={contact.redirect} target="_blank" rel="noreferrer">
               <LuMailOpen style={{ fontSize: "50px", marginRight: "8px" }} />
               <h3>
                 {contact.name}: {contact.value}
               </h3>
             </a>
           ))}
-          <h3 style={{ fontSize: "30px" }}>Individuals</h3>
+          <h3 style={{ fontSize: "30px" }}>Individuals (For individual inquiries)</h3>
           <div
             style={{
               display: "flex",
@@ -65,9 +57,7 @@ function ContactUs() {
                 <h3>{contact.name}</h3>
                 <div className="individual-contact-details">
                   <a href={`mailto:${contact.email}`}>
-                    <LuMailOpen
-                      style={{ fontSize: "24px", marginRight: "8px" }}
-                    />
+                    <LuMailOpen style={{ fontSize: "24px", marginRight: "8px" }} />
                     Email: {contact.email}
                   </a>
                 </div>

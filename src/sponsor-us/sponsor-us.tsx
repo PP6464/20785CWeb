@@ -29,18 +29,13 @@ function SponsorUs() {
 
   return (
     <div id="sponsor-us-container">
-      <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>
-        Sponsor Us:
-      </h1>
+      <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>Sponsor Us:</h1>
       {loading ? (
         <Loading inAppBar={false} size="16vw" color="black" />
       ) : (
         <React.Fragment>
           {sponsors.length === 0 ? (
-            <h3 style={{ textAlign: "center" }}>
-              No sponsors yet. Sponsor us and showcase your brand on both our
-              website and our robot!
-            </h3>
+            <h3 style={{ textAlign: "center" }}>No sponsors yet. Sponsor us and showcase your brand on both our website and our robot!</h3>
           ) : (
             <div
               style={{
@@ -65,21 +60,14 @@ function SponsorUs() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
-                    src={sponsor.photo}
-                    style={{ height: "5vh", borderRadius: "50%" }}
-                    alt=""
-                  />
-                  <h3 style={{ paddingLeft: "1rem", paddingRight: "1rem" }}>
-                    {sponsor.name}
-                  </h3>
+                  <img src={sponsor.photo} style={{ height: "5vh", borderRadius: "50%" }} alt="" />
+                  <h3 style={{ paddingLeft: "1rem", paddingRight: "1rem" }}>{sponsor.name}</h3>
                 </a>
               ))}
             </div>
           )}
-          <h1 style={{ textAlign: "center" }}>To sponsor us:</h1>
           <p style={{ textAlign: "center" }}>
-            Contact us at vexoverride@gmail.com
+            Contact us at <b>overridevex@gmail.com</b>
           </p>
           <form
             style={{
@@ -88,15 +76,7 @@ function SponsorUs() {
               alignItems: "center",
             }}
           >
-            <input
-              type="text"
-              className="sponsor-us-input"
-              value={companyName}
-              onChange={(e) => setCompanyName(e.target.value)}
-              placeholder="Enter company name"
-              data-smaller="true"
-              required
-            />
+            <input type="text" className="sponsor-us-input" value={companyName} onChange={(e) => setCompanyName(e.target.value)} placeholder="Enter company name" data-smaller="true" required />
             <input
               type="email"
               className="sponsor-us-input"
@@ -106,25 +86,14 @@ function SponsorUs() {
               data-medium="true"
               required
             />
-            <textarea
-              className="sponsor-us-input"
-              value={companyDetails}
-              onChange={(e) => setCompanyDetails(e.target.value)}
-              placeholder="Your terms for sponsorship"
-              data-larger="true"
-              required
-            />
+            <textarea className="sponsor-us-input" value={companyDetails} onChange={(e) => setCompanyDetails(e.target.value)} placeholder="Your terms for sponsorship" data-larger="true" required />
             <div
               id="register-sponsorship"
               onClick={() => {
                 window.open(
-                  `mailto:vexoverride@gmail.com?body=Company%3A%20${encodeURIComponent(
-                    companyName
-                  )}%0d%0aTerms%20for%20sponsorship%3A%20${encodeURIComponent(
+                  `mailto:overridevex@gmail.com?body=Company%3A%20${encodeURIComponent(companyName)}%0d%0aTerms%20for%20sponsorship%3A%20${encodeURIComponent(
                     companyDetails
-                  )}%0d%0aEmail%20to%20email%20back%20on%3A%20${encodeURIComponent(
-                    companyEmail
-                  )}&subject=Sponsorship%20interest`
+                  )}%0d%0aEmail%20to%20email%20back%20on%3A%20${encodeURIComponent(companyEmail)}&subject=Sponsorship%20interest`
                 );
               }}
             >
