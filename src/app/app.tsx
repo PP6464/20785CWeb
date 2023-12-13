@@ -10,7 +10,7 @@ import ContactUs from "../contact-us/contact-us";
 import SponsorUs from "../sponsor-us/sponsor-us";
 import Competitions from "../competitions/competitions";
 import Awards from "../awards/awards";
-import ScrollToTop from "./ScrollToTop.js";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   return (
