@@ -65,64 +65,38 @@ function Competitions() {
     loadCompetitions();
   }, [seasons]);
 
+  const renderSeasonChip = (season: string, label: string) => (
+    <React.Fragment key={season}>
+      <Chip
+        label={label}
+        onClick={() => {
+          const updatedSeasons = seasons.includes(season) ? seasons.filter((e) => e !== season) : seasons.concat(season);
+          setSeasons(updatedSeasons);
+        }}
+        variant={seasons.includes(season) ? "filled" : "outlined"}
+        icon={seasons.includes(season) ? <IoIosCheckmarkCircle /> : undefined}
+        style={{ marginRight: "10px" }}
+      />
+    </React.Fragment>
+  );
+
   return (
     <div>
       {selectedCompetition === null ? (
         <div id="competitions-container">
           <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>Competitions</h1>
-          <div style={{ display: "flex", zIndex: "0" }} id="competitions-seasons-chips">
-            <Chip
-              label={<>{seasons.includes("181") && <IoIosCheckmarkCircle />} 2023-24</>}
-              onClick={() => {
-                !seasons.includes("181") ? setSeasons(seasons.concat("181")) : setSeasons(seasons.filter((e) => e !== "181"));
-              }}
-              variant={seasons.includes("181") ? "filled" : "outlined"}
-            />
-            <div className="competitions-chip-padding"></div>
-            <Chip
-              label={<>{seasons.includes("173") && <IoIosCheckmarkCircle />} 2022-23</>}
-              onClick={() => {
-                !seasons.includes("173") ? setSeasons(seasons.concat("173")) : setSeasons(seasons.filter((e) => e !== "173"));
-              }}
-              variant={seasons.includes("173") ? "filled" : "outlined"}
-            />
-            <div className="competitions-chip-padding"></div>
-            <Chip
-              label={<>{seasons.includes("154") && <IoIosCheckmarkCircle />} 2021-22</>}
-              onClick={() => {
-                !seasons.includes("154") ? setSeasons(seasons.concat("154")) : setSeasons(seasons.filter((e) => e !== "154"));
-              }}
-              variant={seasons.includes("154") ? "filled" : "outlined"}
-            />
-            <div className="competitions-chip-padding"></div>
-            <Chip
-              label={<>{seasons.includes("139") && <IoIosCheckmarkCircle />} 2020-21</>}
-              onClick={() => {
-                !seasons.includes("139") ? setSeasons(seasons.concat("139")) : setSeasons(seasons.filter((e) => e !== "139"));
-              }}
-              variant={seasons.includes("139") ? "filled" : "outlined"}
-            />
-            <div className="competitions-chip-padding"></div>
-            <Chip
-              label={<>{seasons.includes("130") && <IoIosCheckmarkCircle />} 2019-20</>}
-              onClick={() => {
-                !seasons.includes("130") ? setSeasons(seasons.concat("130")) : setSeasons(seasons.filter((e) => e !== "130"));
-              }}
-              variant={seasons.includes("130") ? "filled" : "outlined"}
-            />
-            <div className="competitions-chip-padding"></div>
-            <Chip
-              label={<>{seasons.includes("125") && <IoIosCheckmarkCircle />} 2018-19</>}
-              onClick={() => {
-                !seasons.includes("125") ? setSeasons(seasons.concat("125")) : setSeasons(seasons.filter((e) => e !== "125"));
-              }}
-              variant={seasons.includes("125") ? "filled" : "outlined"}
-            />
+          <div style={{ display: "flex", zIndex: "0", marginBottom: "25px" }} id="competitions-seasons-chips">
+            {renderSeasonChip("181", "2023-24")}
+            {renderSeasonChip("173", "2022-23")}
+            {renderSeasonChip("154", "2021-22")}
+            {renderSeasonChip("139", "2020-21")}
+            {renderSeasonChip("130", "2019-20")}
+            {renderSeasonChip("125", "2018-19")}
           </div>
           {loading ? (
             <Loading inAppBar={false} size="16vw" color="black" />
           ) : competitions.length === 0 ? (
-            <p style={{ textAlign: "center", fontSize: "20px" }}>No competitions for the selected seasons</p>
+            <p style={{ textAlign: "center", fontSize: "20px" }}>{seasons.length > 0 ? "No competitions for the selected seasons" : "Please select seasons"}</p>
           ) : (
             competitions.map((competition: Competition, index: number) => (
               <div key={index} className="competition-outer" onClick={() => setSelectedCompetition(competition)}>
@@ -172,41 +146,7 @@ function Competitions() {
 
           <h3>{selectedCompetition.date}</h3>
           <p style={{ margin: "0" }}>Location:</p>
-          {!(selectedCompetition.location.venue === null || selectedCompetition.location.venue === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.venue}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
-          {!(selectedCompetition.location.addressLine1 === null || selectedCompetition.location.addressLine1 === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.addressLine1}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
-          {!(selectedCompetition.location.addressLine2 === null || selectedCompetition.location.addressLine2 === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.addressLine2}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
-          {!(selectedCompetition.location.city === null || selectedCompetition.location.city === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.city}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
-          {!(selectedCompetition.location.region === null || selectedCompetition.location.region === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.region}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
-          {!(selectedCompetition.location.postcode === null || selectedCompetition.location.postcode === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.postcode}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
-          {!(selectedCompetition.location.country === null || selectedCompetition.location.country === "") ? (
-            <p style={{ margin: "0" }}>{selectedCompetition.location.country}</p>
-          ) : (
-            <div className="empty"></div>
-          )}
+          {Object.entries(selectedCompetition.location).map(([key, value]) => (value !== null && value !== "" ? <p style={{ margin: "0" }}>{value}</p> : <div className="empty"></div>))}
           <a style={{ marginTop: "10px" }} href={`https://robotevents.com/robot-competitions/vex-robotics-competitions/${selectedCompetition.sku}.html`}>
             Further information
           </a>
