@@ -95,8 +95,10 @@ function Competitions() {
           </div>
           {loading ? (
             <Loading inAppBar={false} size="16vw" color="black" />
+          ) : competitions.length === 0 && seasons.length === 0 ? (
+            <p style={{ textAlign: "center", fontSize: "20px" }}>Please select seasons</p>
           ) : competitions.length === 0 ? (
-            <p style={{ textAlign: "center", fontSize: "20px" }}>{seasons.length > 0 ? "No competitions for the selected seasons" : "Please select seasons"}</p>
+            <p style={{ textAlign: "center", fontSize: "20px" }}>No competitions for the selected seasons</p>
           ) : (
             competitions.map((competition: Competition, index: number) => (
               <div key={index} className="competition-outer" onClick={() => setSelectedCompetition(competition)}>
