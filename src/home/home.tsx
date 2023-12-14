@@ -140,8 +140,8 @@ function Home() {
               height="54vh"
             />
           ) : (
-            <p style={{ textAlign: "justify", margin: "0 20px" }}>
-              {selectedFeed.value}
+            <p style={{ textAlign: "justify", margin: "0 20px" }} dangerouslySetInnerHTML={{__html: selectedFeed.value}}>
+              {/*selectedFeed.value*/}
             </p>
           )}
         </div>
