@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import "firebase/firestore";
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const app = initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
