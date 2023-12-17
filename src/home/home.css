@@ -5,6 +5,18 @@
   justify-content: flex-start;
 }
 
+.home-card {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 5px 5px #cccccc;
+  padding: 16px;
+  border-radius: 20px;
+  width: 50%;
+}
+
 .feed-outer {
   box-shadow: 0 0 5px #cccccc;
   border-radius: 30px;
