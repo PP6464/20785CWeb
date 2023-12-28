@@ -65,8 +65,6 @@ function Navbar() {
         return 4;
       case "/sponsor-us":
         return 5;
-      case "/download-app":
-        return 6;
       default:
         return null;
     }
@@ -204,7 +202,6 @@ function Navbar() {
             <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv} />
             <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv} />
             <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv} />
-            <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv} />
           </ul>
           <div id="small-navbar" style={{ display: showDropDown ? "flex" : "none" }}>
             <NavbarOption path="/" selected={index === 0} title="Home" onClick={hideSmallDiv} />
@@ -213,7 +210,6 @@ function Navbar() {
             <NavbarOption path="/meet-the-team" selected={index === 3} title="Meet the team" onClick={hideSmallDiv} />
             <NavbarOption path="/contact-us" selected={index === 4} title="Contact us" onClick={hideSmallDiv} />
             <NavbarOption path="/sponsor-us" selected={index === 5} title="Sponsor us" onClick={hideSmallDiv} />
-            <NavbarOption path="/download-app" selected={index === 6} title="20785C app" onClick={hideSmallDiv} />
           </div>
         </div>
       </nav>
