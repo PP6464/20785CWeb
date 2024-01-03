@@ -6,14 +6,16 @@
   justify-content: center;
   align-items: center;
   background: #1d1d1d;
-  transition: background 0.5s ease, color 0.3s ease, transform 0.3s ease; /* Added transform property */
+  transition: background 0.5s ease, color 0.3s ease, transform 0.3s ease, padding-bottom 0.3s ease; /* Added padding-bottom property */
   position: relative;
+  padding-bottom: 0; /* Added padding-bottom property */
 }
 
 .navbar-option[data-selected="true"] {
   background: #00ffff;
   color: black;
   transform: translateY(5px);
+  padding-bottom: 5px; /* Added padding-bottom property */
 }
 
 .navbar-option[data-selected="false"] {
@@ -25,9 +27,8 @@
   background: #272727;
   color: #00ffff;
   cursor: pointer;
-  transform: translateY(
-    3px
-  ); /* Added transform property for the sliding effect */
+  transform: translateY(5px); /* Changed translateY value to 5px */
+  padding-bottom: 5px; /* Added padding-bottom property */
 }
 
 .navbar-option::before {
