@@ -41,15 +41,6 @@ function Navbar() {
     setShowDropDown(false);
   }
 
-  // Show rolling marquee of sponsors or static div if sponsors width not large enough to require rolling
-  function decideMarqueeShouldPlay() {
-    try {
-      return document.getElementById("sponsor-place")!.clientWidth < (document.documentElement.clientHeight * 0.05 + 10) * sponsors.length;
-    } catch {
-      return true;
-    }
-  }
-
   // Convert route to index
   function indexForRoute(route: string): number | null {
     switch (route) {
@@ -108,64 +99,33 @@ function Navbar() {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: "100%",
+                width: "66%",
               }}
             >
-              <Marquee
-                style={{
-                  width: "64%",
-                  position: "absolute",
-                  left: `${document.getElementById("img-only-logo") !== null ? `${document.getElementById("img-only-logo")!.offsetWidth + width * 0.05}px` : "30%"}`,
-                  zIndex: "0",
-                }}
-              >
+              <Marquee speed={50} gradient={false}>
                 <h1 id="no-sponsors-text">No sponsors yet. Sponsor us and showcase your brand on both our website and our robot!</h1>
               </Marquee>
             </div>
           ) : (
             <div id="sponsor-place" style={{ fontSize: "9px" }}>
               <h1>Sponsored by: </h1>
-              {decideMarqueeShouldPlay() ? (
-                <Marquee>
-                  {sponsors.map((sponsor: any, index: number) => (
-                    <a
-                      className="sponsor"
-                      key={index}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        color: "white",
-                        textDecoration: "none",
-                      }}
-                      href={sponsor.website}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img src={sponsor.photo} style={{ height: "5vh", borderRadius: "50%" }} alt={sponsor.name} />
-                    </a>
-                  ))}
-                </Marquee>
-              ) : (
-                <div style={{ display: "flex" }}>
-                  {sponsors.map((sponsor: any, index: number) => (
-                    <a
-                      className="sponsor"
-                      key={index}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        color: "white",
-                        textDecoration: "none",
-                      }}
-                      href={sponsor.website}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <img src={sponsor.photo} style={{ height: "5vh", borderRadius: "50%" }} alt={sponsor.name} />
-                    </a>
-                  ))}
-                </div>
-              )}
+              <Marquee speed={50} gradient={false}>
+                {sponsors.map((sponsor: any, index: number) => (
+                  <a
+                    className="sponsor"
+                    key={index}
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
+                    href={sponsor.website}
+                  >
+                    {sponsor.name}
+                  </a>
+                ))}
+              </Marquee>
             </div>
           )}
           <a href="https://www.qebarnet.co.uk" target="_blank" rel="noreferrer">
