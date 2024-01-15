@@ -17,6 +17,7 @@ function Home() {
           <p>We won the design award at the QE competition! 🏆</p>
         </div>
         <iframe
+          className="gofundme-iframe"
           src="https://www.gofundme.com/f/help-override-20785c-compete-in-the-2324-season"
           title="gofundme"
           style={{ flex: 1, height: "544.17px", border: "none", overflow: "hidden" }}
