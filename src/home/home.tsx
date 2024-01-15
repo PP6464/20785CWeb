@@ -6,7 +6,7 @@ function Home() {
     <div id="home-container">
       <h1 style={{ textDecoration: "underline", fontSize: "40px" }}>Home</h1>
       <div id="home-feed-1">
-        <div className="home-card" style={{ flex: 4, marginRight: "20px" }}>
+        <div className="home-card" style={{ flex: 6, marginRight: "20px" }}>
           <div>
             <h1>Design Award: QE Competition</h1>
             <p>09/12/2023</p>
@@ -16,12 +16,12 @@ function Home() {
           </div>
           <p>We won the design award at the QE competition! 🏆</p>
         </div>
-        <iframe
-          className="gofundme-iframe"
-          src="https://www.gofundme.com/f/help-override-20785c-compete-in-the-2324-season"
+        <object
+          className="gofundme-object"
+          data="https://www.gofundme.com/f/help-override-20785c-compete-in-the-2324-season"
           title="gofundme"
-          style={{ flex: 1, height: "544.17px", border: "none", overflow: "hidden" }}
-        ></iframe>
+          style={{ flex: 2, height: "544.17px", border: "none", overflow: "hidden" }}
+        ></object>
       </div>
     </div>
   );

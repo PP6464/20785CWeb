@@ -95,16 +95,9 @@
     width: 90%;
     margin: 5%;
   }
-
-  iframe {
-    margin-top: 10px;
-    height: 1000px !important;
-  }
 }
 
-@media (max-width: 600px) {
-  .gofundme-iframe {
-    width: 100%;
-    height: 300px;
-  }
-}
+.gofundme-object {
+  height: 600px;
+  overflow: auto;
+ }
