@@ -13,6 +13,7 @@ type Award = {
 
 const SEASONS: Record<string, string> = {
   "181": "Over Under",
+  "173": "Spin Up",
   "154": "Tipping Point",
   "139": "Change Up",
   "125": "Turning Point",
